@@ -7,8 +7,24 @@
     <link rel='stylesheet' href='/stylesheets/header.css' />
     <link rel='stylesheet' href='/stylesheets/input.css' />
     <link rel='stylesheet' href='/stylesheets/output.css' />
+    <link rel='stylesheet' href='/stylesheets/animate.css' />
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/components/wowjs/dist/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+    $(function(){
+        $(".btn-start").click(function(){
+                $(".init-container").css("display", "none");
+                $(".input-container").css("display", "block");
+        })
+        $(".btn-submit").click(function(){
+               $(".output-container").css("display", "block");
+       })
+    });
+    </script>
   </head>
   <body>
     <%- include header %>

@@ -9,6 +9,9 @@
         display: inline-block;
         float: left;
         font-size: 30px;
+        a {
+            text-decoration: none;
+        }
     }
     .header-info {
         height: 70px;
@@ -19,7 +22,7 @@
         a {
             padding: 5px;
             margin: 0 20px;
-            color: #36972f;
+            color: #fffbb1;
             text-decoration: none;
             border-bottom: transparent solid 1px;
             padding-bottom: 5px;
@@ -29,7 +32,7 @@
             transition: bottom .15s ease-out;
             &:hover {
                 bottom: 3px;
-                border-bottom: #36972f solid 3px;
+                border-bottom: #fffbb1 solid 3px;
             }
         }
     }

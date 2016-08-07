@@ -1,22 +1,18 @@
 .output-container {
+  display: none;
   height: 500px;
-  border: #36972f solid 3px;
+  background-color: #fffbb1;
   border-radius: 20px;
-  margin-top: 30px;
-  overflow: hidden;
+  margin-top: 50px;
   padding: 0;
+  overflow: hidden;
   text-align: center; }
   .output-container .output-header {
-    float: right;
-    height: 100%;
-    width: 60px;
-    background-color: #36972f; }
+    height: 60px;
+    background-color: #fffbb1; }
   .output-container .output-header-title {
-    position: relative;
-    top: 250px;
-    margin-top: -84px;
-    color: white;
-    vertical-align: middle;
-    font-size: 30px; }
+    font-size: 25px;
+    line-height: 60px;
+    color: #a37bad; }
 
 /*# sourceMappingURL=output.css.map */
