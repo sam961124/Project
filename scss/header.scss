@@ -1,0 +1,36 @@
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 15px 100px;
+    .header-logo {
+        height: 70px;
+        line-height: 70px;
+        display: inline-block;
+        float: left;
+        font-size: 30px;
+    }
+    .header-info {
+        height: 70px;
+        line-height: 70px;
+        display: inline-block;
+        float: right;
+        font-size: 20px;
+        a {
+            padding: 5px;
+            margin: 0 20px;
+            color: #36972f;
+            text-decoration: none;
+            border-bottom: transparent solid 1px;
+            padding-bottom: 5px;
+            position: relative;
+            bottom: 0;
+            -webkit-transition: bottom .3s ease-out;
+            transition: bottom .15s ease-out;
+            &:hover {
+                bottom: 3px;
+                border-bottom: #36972f solid 3px;
+            }
+        }
+    }
+}

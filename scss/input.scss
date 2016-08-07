@@ -1,0 +1,40 @@
+.input-container {
+    height: 500px;
+    border: #e65f95 solid 3px;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    .input-header {
+        height: 60px;
+        background-color: #e65f95;
+    }
+    .input-header-title {
+        font-size: 25px;
+        line-height: 60px;
+        color: white;
+    }
+    .input-detail {
+        text-align: left;
+        font-size: 20px;
+        padding: 20px 40px;
+    }
+    label {
+        color: #e65f95;
+        margin-bottom: 20px;
+    }
+    .form-control {
+        font-size: 20px;
+    }
+    .btn-green {
+        padding: 10px 20px;
+        margin-top: 30px;
+        color: white;
+        background-color: #e65f95;
+        font-size: 20px;
+        &:hover {
+            background-color: #f07fac;
+        }
+    }
+}

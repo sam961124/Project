@@ -1,0 +1,28 @@
+//run sass --watch scss:public/stylesheets/ in four
+body {
+    font-size: 16px;
+    font-family: 'Heiti TC', HeitiTC-Light, LiHei, 微軟正黑體, Lato, Verdana, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #36972f;
+    -webkit-font-smoothing: antialiased;
+    background-color: #c4fcc0;
+    margin: 0;
+    width: 100%;
+}
+.container {
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding: 0 0px;
+    margin-top: 100px;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 100px;
+    .footer-container {
+        text-align: center;
+        height: 55px;
+        line-height: 55px;
+    }
+}

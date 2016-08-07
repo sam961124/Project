@@ -1,0 +1,22 @@
+.output-container {
+  height: 500px;
+  border: #36972f solid 3px;
+  border-radius: 20px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center; }
+  .output-container .output-header {
+    float: right;
+    height: 100%;
+    width: 60px;
+    background-color: #36972f; }
+  .output-container .output-header-title {
+    position: relative;
+    top: 250px;
+    margin-top: -84px;
+    color: white;
+    vertical-align: middle;
+    font-size: 30px; }
+
+/*# sourceMappingURL=output.css.map */
