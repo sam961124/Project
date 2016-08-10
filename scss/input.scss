@@ -43,37 +43,3 @@
         }
     }
 }
-.init-container {
-    height: 500px;
-    margin-top: 50px;
-    padding: 0;
-    overflow: hidden;
-    text-align: center;
-    .init-imgbox {
-        width:200px;
-        height: 200px;
-        margin: 0 auto;
-        img {
-            width: 100%;
-            display: inline-block;
-        }
-    }
-    .init-detail {
-        margin: 30px 0;
-        font-weight: bold;
-        font-size: 24px;
-    }
-    .btn-start {
-        padding: 10px 20px;
-        color: white;
-        background-color: #a37bad;
-        font-size: 20px;
-        position: relative;
-        bottom: 0;
-        -webkit-transition: bottom .3s ease-out;
-        transition: bottom .15s ease-out;
-        &:hover {
-            bottom: 5px;
-        }
-    }
-}
