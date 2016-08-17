@@ -1,7 +1,23 @@
-<div class="wow fadeInRight col-lg-6 col-lg-offset-1 output-container">
+<div class="wow fadeInRight col-lg-6 col-lg-offset-1 output-container" ng-controller="outcomeFormController">
     <div class="output-header">
         <div class="output-header-title">
             搜尋結果
         </div>
+    </div>
+    <div class="output-outcome">
+        <div class="output-detail" ng-repeat="answer in answers| startFrom:currentPage*pageSize | limitTo:pageSize">
+            <div class="output-detail-title">
+                <a ng-href="{{answer.link}}">{{answer.title}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-container">
+        <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+            <
+        </button>
+        {{currentPage+1}}/{{numberOfPages()}}
+        <button ng-disabled="currentPage >= answers.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+            >
+        </button>
     </div>
 </div>
