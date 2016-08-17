@@ -1,27 +1,30 @@
 .output-container {
   display: none;
-  height: 500px;
+  min-height: 500px;
   background-color: #fffbb1;
   border-radius: 20px;
   margin-top: 50px;
-  padding: 10px 50px;
+  padding: 30px 50px;
   overflow: hidden;
   text-align: center; }
   .output-container .output-header {
-    height: 60px;
+    height: 40px;
     background-color: #fffbb1; }
   .output-container .output-header-title {
     font-size: 25px;
-    line-height: 60px;
+    line-height: 40px;
     color: #a37bad; }
   .output-container .output-outcome {
-    height: 360px;
+    height: 300px;
     text-align: left;
     overflow: scroll; }
     .output-container .output-outcome a {
       line-height: 50px;
       font-size: 18px;
       color: #a37bad; }
+    @media screen and (max-width: 767px) {
+      .output-container .output-outcome {
+        padding: 0px 20px; } }
   .output-container .page-container {
     text-align: center;
     color: #a37bad;
@@ -37,5 +40,17 @@
       transition: bottom .15s ease-out; }
       .output-container .page-container button:hover {
         bottom: 2px; }
+      @media screen and (max-width: 370px) {
+        .output-container .page-container button {
+          margin: 0 20px; } }
+  @media screen and (max-width: 767px) {
+    .output-container {
+      min-height: 450px;
+      margin-top: 20px;
+      padding: 20px 0; } }
+  @media screen and (max-width: 370px) {
+    .output-container {
+      min-height: 420px;
+      margin-top: 0px; } }
 
 /*# sourceMappingURL=output.css.map */

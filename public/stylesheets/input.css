@@ -1,18 +1,18 @@
 .input-container {
   display: none;
-  height: 500px;
+  min-height: 500px;
   background-color: #fffbb1;
   border-radius: 20px;
   margin-top: 50px;
-  padding: 10px 0;
+  padding: 30px 0;
   overflow: hidden;
   text-align: center; }
   .input-container .input-header {
-    height: 60px;
+    height: 40px;
     background-color: #fffbb1; }
   .input-container .input-header-title {
     font-size: 25px;
-    line-height: 60px;
+    line-height: 40px;
     color: #a37bad; }
   .input-container .input-detail {
     text-align: left;
@@ -35,5 +35,17 @@
     transition: bottom .15s ease-out; }
     .input-container .btn-submit:hover {
       bottom: 5px; }
+    @media screen and (max-width: 370px) {
+      .input-container .btn-submit {
+        margin-top: 10px; } }
+  @media screen and (max-width: 767px) {
+    .input-container {
+      min-height: 450px;
+      margin-top: 20px;
+      padding: 20px 0; } }
+  @media screen and (max-width: 370px) {
+    .input-container {
+      min-height: 420px;
+      margin-top: 0px; } }
 
 /*# sourceMappingURL=input.css.map */

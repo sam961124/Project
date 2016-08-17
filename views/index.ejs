@@ -2,6 +2,7 @@
 <html ng-app="project">
   <head>
     <title>Project</title>
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel='stylesheet' href='/stylesheets/global.css' />
     <link rel='stylesheet' href='/stylesheets/header.css' />
@@ -21,11 +22,14 @@
     <script>
     $(function(){
         $(".btn-start").click(function(){
-                $(".init-container").css("display", "none");
-                $(".input-container").css("display", "block");
+            $(".init-container").css("display", "none");
+            $(".input-container").css("display", "block");
         })
         $(".btn-submit").click(function(){
-               $(".output-container").css("display", "block");
+            if ($(window).width() <= 767) {
+                $(".input-container").css("display", "none");
+             }
+            $(".output-container").css("display", "block");
        })
     });
     </script>

@@ -1,13 +1,9 @@
 .init-container {
-    height: 500px;
     margin-top: 50px;
     padding: 0;
     overflow: hidden;
     text-align: center;
     .init-imgbox {
-        width:200px;
-        height: 200px;
-        margin: 0 auto;
         img {
             width: 100%;
             display: inline-block;
@@ -30,5 +26,8 @@
         &:hover {
             bottom: 5px;
         }
+    }
+    @media screen and (max-width: 767px) {
+        margin-top: 0;
     }
 }
