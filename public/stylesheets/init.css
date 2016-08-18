@@ -21,6 +21,8 @@
     transition: bottom .15s ease-out; }
     .init-container .btn-start:hover {
       bottom: 5px; }
+    .init-container .btn-start:focus {
+      outline: 0; }
   @media screen and (max-width: 767px) {
     .init-container {
       margin-top: 0; } }

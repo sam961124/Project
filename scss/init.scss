@@ -26,6 +26,9 @@
         &:hover {
             bottom: 5px;
         }
+        &:focus {
+            outline: 0;
+        }
     }
     @media screen and (max-width: 767px) {
         margin-top: 0;

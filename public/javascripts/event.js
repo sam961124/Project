@@ -1,4 +1,5 @@
 var project = angular.module('project', ['ngRoute']);
+var resData = "";
 
 project.controller('outcomeFormController', function($element, $scope, $window) {
      $scope.answers = [
@@ -20,52 +21,38 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
     }
 });
 
+project.controller("HttpPostController", function ($scope, $http) {
+    $scope.detail = null;
+    $scope.SendData = function () {
+        $http({
+           method: 'POST',
+           url: 'http://52.41.60.7:3000',
+           data: $scope.detail,
+           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+       })
+       .then(function(data) {
+			console.log("posted successfully");
+            console.log(data);
+            $(function(){
+                if (data != null) {
+                    if ($(window).width() <= 800) {
+                        $(".input-container").css("display", "none");
+                     }
+                    $(".loader-box").css("display", "none");
+                    $(".output-container").addClass("animated fadeInRight");
+                    $(".output-container").css("display", "block");
+                }
+            });
+
+		},function(data) {
+			console.error("error in posting");
+		});
+    };
+
+});
 project.filter('startFrom', function() {
     return function(input, start) {
         start = +start; //parse to int
         return input.slice(start);
     }
 });
-
-function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-    // XHR for Chrome/Firefox/Opera/Safari.
-    xhr.open(method, url, true);
-  } else if (typeof XDomainRequest != "undefined") {
-    // XDomainRequest for IE.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-  } else {
-    // CORS not supported.
-    xhr = null;
-  }
-  return xhr;
-}
-function getTitle(text) {
-  return text.match('<title>(.*)?</title>')[1];
-}
-// Make the actual CORS request.
-function makeCorsRequest() {
-  // This is a sample server that supports CORS.
-  var url = 'http://52.41.60.7:3000';
-
-  var xhr = createCORSRequest('POST', url);
-  if (!xhr) {
-    alert('CORS not supported');
-    return;
-  }
-
-  // Response handlers.
-  xhr.onload = function() {
-    var text = xhr.responseText;
-    var title = getTitle(text);
-    alert('Response from CORS request to ' + url + ': ' + title);
-  };
-
-  xhr.onerror = function() {
-    alert('Woops, there was an error making the request.');
-  };
-
-  xhr.send();
-}

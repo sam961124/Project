@@ -35,6 +35,8 @@
     transition: bottom .15s ease-out; }
     .input-container .btn-submit:hover {
       bottom: 5px; }
+    .input-container .btn-submit:focus {
+      outline: 0; }
     @media screen and (max-width: 370px) {
       .input-container .btn-submit {
         margin-top: 10px; } }

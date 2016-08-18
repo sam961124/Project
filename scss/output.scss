@@ -45,6 +45,9 @@
             &:hover {
                 bottom: 2px;
             }
+            &:focus {
+                outline: 0;
+            }
             @media screen and (max-width: 370px) {
                 margin: 0 20px;
             }
@@ -59,4 +62,42 @@
         min-height: 420px;
         margin-top: 0px;
     }
+}
+.loader-box {
+    position: relative;
+    display: none;
+    min-height: 500px;
+    margin-top: 50px;
+    padding: 30px 50px;
+    text-align: center;
+    .loading {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right:0;
+        margin: auto;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .loader {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right:0;
+        margin: auto;
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #a37bad;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: spin 1.5s linear infinite;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
