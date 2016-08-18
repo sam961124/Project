@@ -29,6 +29,7 @@ body {
     line-height: 55px; }
   @media screen and (max-width: 767px) {
     .footer {
+      bottom: -1px;
       font-size: 12px;
       padding: 10px 20px; } }
 
