@@ -45,12 +45,12 @@
       @media screen and (max-width: 370px) {
         .output-container .page-container button {
           margin: 0 20px; } }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 767px) {
     .output-container {
       min-height: 400px;
       margin-top: 10px;
       padding: 20px 0; } }
-  @media screen and (max-width: 370px) {
+  @media only screen and (max-width: 370px) {
     .output-container {
       min-height: 380px;
       margin-top: 0px; } }
@@ -85,12 +85,12 @@
     width: 100px;
     height: 100px;
     animation: spin 1.5s linear infinite; }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 767px) {
     .loader-box {
       min-height: 400px;
       margin-top: 10px;
       padding: 20px 0; } }
-  @media screen and (max-width: 370px) {
+  @media only screen and (max-width: 370px) {
     .loader-box {
       min-height: 380px;
       margin-top: 0px; } }
