@@ -90,7 +90,7 @@ li {
         }
 	}
 
-	nav:hover ul {
+	nav:target ul {
 		display: block;
 	}
 }
