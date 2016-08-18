@@ -20,6 +20,13 @@
         new WOW().init();
     </script>
     <script>
+ window.addEventListener("load",function() {
+   setTimeout(function(){
+    window.scrollTo(0, 0);
+    }, 0);
+ });
+</script>
+    <script>
     $(function(){
         $(".btn-start").click(function(){
             $(".init-container").css("display", "none");
