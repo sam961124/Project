@@ -23,7 +23,7 @@
       bottom: 5px; }
     .init-container .btn-start:focus {
       outline: 0; }
-  @media only screen and (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     .init-container {
       margin-top: 0; } }
 
