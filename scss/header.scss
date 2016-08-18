@@ -65,7 +65,7 @@ li {
         top: 0;
 	}
 
-	nav ul, nav:focus ul {
+	nav ul, nav:active ul {
 		display: none;
 		position: absolute;
 		padding: 2px 0;
@@ -90,7 +90,7 @@ li {
         }
 	}
 
-	nav:hover ul {
+	nav:focus ul {
 		display: block;
 	}
 }

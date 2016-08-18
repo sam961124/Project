@@ -58,7 +58,7 @@ li {
     line-height: 70px;
     top: 0; }
 
-  nav ul, nav:focus ul {
+  nav ul, nav:active ul {
     display: none;
     position: absolute;
     padding: 2px 0;
@@ -80,7 +80,7 @@ li {
       padding-bottom: 7px;
       border-bottom: 1px solid #fffbb1; }
 
-  nav:hover ul {
+  nav:focus ul {
     display: block; } }
 
 /*# sourceMappingURL=header.css.map */
