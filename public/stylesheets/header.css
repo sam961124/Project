@@ -58,7 +58,7 @@ li {
     line-height: 70px;
     top: 0; }
 
-  nav ul, nav:active ul {
+  nav ul, nav:focus ul {
     display: none;
     position: absolute;
     padding: 2px 0;
