@@ -35,9 +35,6 @@ project.controller("HttpPostController", function ($scope, $http) {
             console.log(data);
             $(function(){
                 if (data != null) {
-                    if ($(window).width() <= 800) {
-                        $(".input-container").css("display", "none");
-                     }
                     $(".loader-box").css("display", "none");
                     $(".output-container").addClass("animated fadeInRight");
                     $(".output-container").css("display", "block");
