@@ -24,14 +24,15 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
 project.controller("HttpPostController", function ($scope, $http) {
     $scope.detail = null;
     $scope.SendData = function () {
+        console.log($scope.detail);
         $http({
            method: 'POST',
            url: 'http://52.41.60.7:3000',
-           data: $scope.detail,
-           headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+           data: {'data':$scope.detail},
+           headers: {'Content-Type': 'application/json'}
        })
        .then(function(data) {
-			console.log("posted successfully");
+	    console.log("posted successfully");
             console.log(data);
             $(function(){
                 if (data != null) {
