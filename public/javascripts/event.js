@@ -33,7 +33,7 @@ project.controller("HttpPostController", function ($scope, $http) {
        })
        .then(function(data) {
 	    console.log("posted successfully");
-            console.log(data);
+            console.log(data.data);
             $(function(){
                 if (data != null) {
                     $(".loader-box").css("display", "none");
