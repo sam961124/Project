@@ -1,7 +1,7 @@
 .input-container {
     display: none;
     min-height: 500px;
-    background-color: #fffbb1;
+    background-color: #ffea95;
     border-radius: 20px;
     margin-top: 50px;
     padding: 30px 0;
@@ -9,21 +9,29 @@
     text-align: center;
     .input-header {
         height: 40px;
-        background-color: #fffbb1;
     }
     .input-header-title {
         font-size: 25px;
         line-height: 40px;
-        color: #a37bad;
+        color: #7d0000;
     }
     .input-detail {
         text-align: left;
         font-size: 20px;
         padding: 20px 40px;
     }
-    label {
-        color: #a37bad;
-        margin-bottom: 20px;
+    textarea::-webkit-input-placeholder {
+        color: #7d0000;
+    }
+    textarea {
+        background-color: transparent;
+        border-color: #7d0000;
+        color: black;
+        &:focus {
+            border-color: #7d0000;
+            box-shadow: none;
+            outline: 0;
+        }
     }
     .form-control {
         font-size: 20px;
@@ -32,7 +40,7 @@
         padding: 10px 20px;
         margin-top: 30px;
         color: white;
-        background-color: #a37bad;
+        background-color: #7d0000;
         font-size: 20px;
         position: relative;
         bottom: 0;

@@ -45,7 +45,6 @@ project.controller("HttpPostController", function ($scope, $http) {
 			console.error("error in posting");
 		});
     };
-
 });
 project.filter('startFrom', function() {
     return function(input, start) {

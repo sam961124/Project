@@ -1,33 +1,39 @@
 .input-container {
   display: none;
   min-height: 500px;
-  background-color: #fffbb1;
+  background-color: #ffea95;
   border-radius: 20px;
   margin-top: 50px;
   padding: 30px 0;
   overflow: hidden;
   text-align: center; }
   .input-container .input-header {
-    height: 40px;
-    background-color: #fffbb1; }
+    height: 40px; }
   .input-container .input-header-title {
     font-size: 25px;
     line-height: 40px;
-    color: #a37bad; }
+    color: #7d0000; }
   .input-container .input-detail {
     text-align: left;
     font-size: 20px;
     padding: 20px 40px; }
-  .input-container label {
-    color: #a37bad;
-    margin-bottom: 20px; }
+  .input-container textarea::-webkit-input-placeholder {
+    color: #7d0000; }
+  .input-container textarea {
+    background-color: transparent;
+    border-color: #7d0000;
+    color: black; }
+    .input-container textarea:focus {
+      border-color: #7d0000;
+      box-shadow: none;
+      outline: 0; }
   .input-container .form-control {
     font-size: 20px; }
   .input-container .btn-submit {
     padding: 10px 20px;
     margin-top: 30px;
     color: white;
-    background-color: #a37bad;
+    background-color: #7d0000;
     font-size: 20px;
     position: relative;
     bottom: 0;

@@ -2,26 +2,28 @@
 body {
   font-size: 16px;
   font-family: 'Heiti TC', HeitiTC-Light, LiHei, 微軟正黑體, Lato, Verdana, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #fffbb1;
+  color: #7d0000;
   -webkit-font-smoothing: antialiased;
-  background-color: #f2aeb9;
+  background-color: #f29b76;
   margin: 0;
   width: 100%; }
 
 .container {
   display: block;
-  height: 100%;
+  min-height: 550px;
   width: 100%;
   padding: 0 0px;
   margin-top: 100px; }
   @media screen and (max-width: 767px) {
     .container {
-      margin-top: 90px; } }
+      margin-top: 90px;
+      min-height: 450px; } }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  display: inline-block;
+  position: relative;
   width: 100%;
+  margin-top: 30px;
   padding: 15px 100px; }
   .footer .footer-container {
     text-align: center;

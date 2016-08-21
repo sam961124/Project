@@ -6,8 +6,7 @@
     </div>
     <form ng-controller="HttpPostController">
         <div class="input-detail">
-            <label>請輸入您的症狀</label>
-            <textarea name="input" class="form-control" ng-model="detail" rows="6"></textarea>
+            <textarea placeholder="請輸入您的症狀" name="input" class="form-control" ng-model="detail" rows="6"></textarea>
         </div>
         <button type="button" class="btn btn-submit" ng-click="SendData()">送出</button>
     </form>

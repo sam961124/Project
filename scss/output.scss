@@ -1,7 +1,7 @@
 .output-container {
     display: none;
     min-height: 500px;
-    background-color: #fffbb1;
+    background-color: #ffea95;
     border-radius: 20px;
     margin-top: 50px;
     padding: 30px 50px;
@@ -9,12 +9,11 @@
     text-align: center;
     .output-header {
         height: 40px;
-        background-color: #fffbb1;
     }
     .output-header-title {
         font-size: 25px;
         line-height: 40px;
-        color: #a37bad;
+        color: #ed5c15;
     }
     .output-outcome {
         height: 300px;
@@ -23,7 +22,7 @@
         a {
             line-height: 50px;
             font-size: 18px;
-            color: #a37bad;
+            color: #ed5c15;
         }
         @media screen and (max-width: 767px) {
             padding: 0px 20px;
@@ -31,7 +30,7 @@
     }
     .page-container {
         text-align: center;
-        color: #a37bad;
+        color: #ed5c15;
         font-size: 20px;
         button {
             border: none;
@@ -89,7 +88,7 @@
         right:0;
         margin: auto;
         border: 8px solid #f3f3f3;
-        border-top: 8px solid #a37bad;
+        border-top: 8px solid #7d0000;
         border-radius: 50%;
         width: 100px;
         height: 100px;
