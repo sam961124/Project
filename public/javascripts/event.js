@@ -22,7 +22,23 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
 });
 
 project.controller("HttpPostController", function ($scope, $http) {
+    var bd = [];
+    var bd_index = 0;
+    var sym = [];
+    var sym_index = 0;
+
+    //user input
     $scope.detail = null;
+
+    //init data array & index
+    $scope.Clear = function () {
+        bd = [];
+        sym = [];
+        bd_index = 0;
+        sym_index = 0;
+    };
+
+    //post to server
     $scope.SendData = function () {
         console.log($scope.detail);
         $http({
@@ -32,7 +48,7 @@ project.controller("HttpPostController", function ($scope, $http) {
            headers: {'Content-Type': 'application/json'}
        })
        .then(function(data) {
-	    console.log("posted successfully");
+	        console.log("posted successfully");
             console.log(data.data);
             $(function(){
                 if (data != null) {
@@ -40,6 +56,22 @@ project.controller("HttpPostController", function ($scope, $http) {
                     $(".output-container").addClass("animated fadeInRight");
                     $(".output-container").css("display", "block");
                 }
+                //find out body part & symptom
+                for (i = 0; i < data.data.bd_tag.length; i++)
+                {
+                    if (data.data.bd_tag[i].charAt(0) == "B")
+                    {
+                        bd[bd_index] = data.data.raw[i];
+                        bd_index++;
+                    }
+                    if (data.data.sym_tag[i].charAt(0) == "B")
+                    {
+                        sym[sym_index] = data.data.raw[i];
+                        sym_index++;
+                    }
+                }
+                console.log(bd);
+                console.log(sym);
             });
 
 		},function(data) {
@@ -47,6 +79,8 @@ project.controller("HttpPostController", function ($scope, $http) {
 		});
     };
 });
+
+//control the pagination
 project.filter('startFrom', function() {
     return function(input, start) {
         start = +start; //parse to int
