@@ -15,15 +15,12 @@
         line-height: 40px;
         color: #ed5c15;
     }
-    .output-outcome {
-        height: 300px;
-        text-align: left;
-        overflow: auto;
-        
+    .output-filter {
+        margin: 20px;
         .output-filter-button {
-            text-align: center;
+            text-align: left;
         }
-        
+
         .output-filter-container {
             .body-select-container {
                 float: left;
@@ -32,7 +29,7 @@
                 #body-select-label {
                     display: block;
                     text-align: center;
-                }  
+                }
                 a {
                     line-height: 0px;
                     font-size: 13px;
@@ -54,6 +51,11 @@
                 }
             }
         }
+    }
+    .output-outcome {
+        height: 300px;
+        text-align: left;
+        overflow: auto;
 
         a {
             line-height: 50px;

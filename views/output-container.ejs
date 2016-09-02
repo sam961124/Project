@@ -4,49 +4,44 @@
             搜尋結果
         </div>
     </div>
+    <div class="output-filter">
+        <div class="output-filter-button">
+            <button type="button" class="btn btn-warning btn-lg" ng-click="toggle()">進階搜尋</button>
+        </div>
+        <div class="output-filter-container" ng-hide="hideFilter">
+            <div class="body-select-container" layout="row">
+                <label id="body-select-label">部位</label>
+                    <select    class="selectpicker form-control show-menu-arrow"
+                               data-live-search="true"
+                               ng-model="selectedBody"
+                               multiple
+                               title="請選擇或搜尋部位...">
+                        <option ng-value="bodypart"
+                                ng-repeat="bodypart in bodyparts | filter:searchBody"> {{bodypart}}
+                        </option>
+                    </select>
+            </div>
+
+            <div class="symptom-select-container" layout="row">
+                <label id="symptom-select-label">症狀</label>
+                    <select    class="selectpicker form-control show-menu-arrow"
+                               data-live-search="true"
+                               ng-model="selectedSymptom"
+                               multiple
+                               title="請選擇或搜尋症狀...">
+                        <option ng-value="symptom"
+                                   ng-repeat="symptom in symptoms | filter:searchSymptom"> {{symptom}}
+                        </option>
+                    </select>
+            </div>
+        </div>
+    </div>
     <div class="output-outcome">
-        <div class="col-md-6">
-            <div class="output-detail" ng-repeat="answer in answers| startFrom:currentPage*pageSize | limitTo:pageSize">
-                <div class="output-detail-title">
-                    <a ng-href="{{answer.link}}">{{answer.title}}</a>
-                </div>
+        <div class="output-detail" ng-repeat="answer in answers| startFrom:currentPage*pageSize | limitTo:pageSize">
+            <div class="output-detail-title">
+                <a ng-href="{{answer.link}}">{{answer.title}}</a>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="output-filter-button">
-                <button type="button" class="btn btn-warning btn-lg" ng-click="toggle()">進階搜尋</button>
-            </div>
-            <div class="output-filter-container" ng-hide="hideFilter">
-                <div class="body-select-container" layout="row">
-                    <label id="body-select-label">部位</label>
-                        <select    class="selectpicker form-control show-menu-arrow"
-                                   data-live-search="true" 
-                                   ng-model="selectedBody"  
-                                   multiple
-                                   title="請選擇或搜尋部位...">
-                            <option ng-value="bodypart" 
-                                    ng-repeat="bodypart in bodyparts | filter:searchBody"> {{bodypart}}
-                            </option>
-                        </select>
-                </div>
-
-                <div class="symptom-select-container" layout="row">
-                    <label id="symptom-select-label">症狀</label>
-                        <select    class="selectpicker form-control show-menu-arrow"
-                                   data-live-search="true" 
-                                   ng-model="selectedSymptom"  
-                                   multiple
-                                   title="請選擇或搜尋症狀...">
-                            <option ng-value="symptom" 
-                                       ng-repeat="symptom in symptoms | filter:searchSymptom"> {{symptom}}
-                            </option>
-                        </select>
-                </div>
-            </div>
-        </div>
-
-
     </div>
     <div class="page-container">
         <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">

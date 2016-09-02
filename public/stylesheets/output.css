@@ -13,34 +13,36 @@
     font-size: 25px;
     line-height: 40px;
     color: #ed5c15; }
+  .output-container .output-filter {
+    margin: 20px; }
+    .output-container .output-filter .output-filter-button {
+      text-align: left; }
+    .output-container .output-filter .output-filter-container .body-select-container {
+      float: left;
+      width: 50%;
+      padding: 10px 5px; }
+      .output-container .output-filter .output-filter-container .body-select-container #body-select-label {
+        display: block;
+        text-align: center; }
+      .output-container .output-filter .output-filter-container .body-select-container a {
+        line-height: 0px;
+        font-size: 13px;
+        color: red; }
+    .output-container .output-filter .output-filter-container .symptom-select-container {
+      float: right;
+      width: 50%;
+      padding: 10px 5px; }
+      .output-container .output-filter .output-filter-container .symptom-select-container #symptom-select-label {
+        display: block;
+        text-align: center; }
+      .output-container .output-filter .output-filter-container .symptom-select-container a {
+        line-height: 0px;
+        font-size: 13px;
+        color: red; }
   .output-container .output-outcome {
     height: 300px;
     text-align: left;
     overflow: auto; }
-    .output-container .output-outcome .output-filter-button {
-      text-align: center; }
-    .output-container .output-outcome .output-filter-container .body-select-container {
-      float: left;
-      width: 50%;
-      padding: 10px 5px; }
-      .output-container .output-outcome .output-filter-container .body-select-container #body-select-label {
-        display: block;
-        text-align: center; }
-      .output-container .output-outcome .output-filter-container .body-select-container a {
-        line-height: 0px;
-        font-size: 13px;
-        color: red; }
-    .output-container .output-outcome .output-filter-container .symptom-select-container {
-      float: right;
-      width: 50%;
-      padding: 10px 5px; }
-      .output-container .output-outcome .output-filter-container .symptom-select-container #symptom-select-label {
-        display: block;
-        text-align: center; }
-      .output-container .output-outcome .output-filter-container .symptom-select-container a {
-        line-height: 0px;
-        font-size: 13px;
-        color: red; }
     .output-container .output-outcome a {
       line-height: 50px;
       font-size: 18px;
