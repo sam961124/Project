@@ -16,7 +16,7 @@
   .output-container .output-outcome {
     height: 300px;
     text-align: left;
-    overflow: scroll; }
+    overflow: hidden; }
     .output-container .output-outcome a {
       line-height: 50px;
       font-size: 18px;
