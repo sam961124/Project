@@ -17,6 +17,17 @@
     margin: 10px; }
     .output-container .output-filter .output-filter-button {
       text-align: left; }
+      .output-container .output-filter .output-filter-button .filter-button {
+        border-radius: 10px;
+        padding: 4px;
+        font-size: 20px;
+        background-color: transparent;
+        border: 1px solid #ed5c15;
+        color: #ed5c15; }
+        .output-container .output-filter .output-filter-button .filter-button:hover {
+          color: #7d0000; }
+        .output-container .output-filter .output-filter-button .filter-button:focus {
+          outline: 0; }
     .output-container .output-filter .output-filter-container .body-select-container {
       float: left;
       width: 50%;

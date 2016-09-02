@@ -19,6 +19,20 @@
         margin: 10px;
         .output-filter-button {
             text-align: left;
+            .filter-button {
+                border-radius: 10px;
+                padding: 4px;
+                font-size: 20px;
+                background-color: transparent;
+                border: 1px solid #ed5c15;
+                color: #ed5c15;
+                &:hover {
+                    color: #7d0000;
+                }
+                &:focus {
+                    outline: 0;
+                }
+            }
         }
 
         .output-filter-container {
