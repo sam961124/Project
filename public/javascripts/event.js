@@ -87,7 +87,6 @@ project.controller("HttpPostController", function ($scope, $http) {
                 }
                 console.log(bd);
                 console.log(sym);
-                //highlight
                 $('textarea').highlightTextarea({
                   words:[{
                     color:'#1acff5',
@@ -97,7 +96,6 @@ project.controller("HttpPostController", function ($scope, $http) {
                     words:sym
                   }]
                 });
-
             });
 		    },
         function(data) {
