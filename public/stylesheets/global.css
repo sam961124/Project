@@ -1,5 +1,6 @@
 @charset "UTF-8";
 body {
+  position: absolute !important;
   font-size: 16px;
   font-family: 'Heiti TC', HeitiTC-Light, LiHei, 微軟正黑體, Lato, Verdana, 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #7d0000;
