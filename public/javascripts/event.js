@@ -22,11 +22,10 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
 });
 
 project.controller("HttpPostController", function ($scope, $http) {
-    var bd = [];
+    /*var bd = [];
     var bd_index = 0;
     var sym = [];
-    var sym_index = 0;
-
+    var sym_index = 0;*/
     //user input
     $scope.detail = null;
 
@@ -48,8 +47,12 @@ project.controller("HttpPostController", function ($scope, $http) {
            headers: {'Content-Type': 'application/json'}
        })
        .then(function(data) {
-	        console.log("posted successfully");
+	          console.log("posted successfully");
             console.log(data.data);
+            var bd = [];
+            var bd_index = 0;
+            var sym = [];
+            var sym_index = 0;
             $(function(){
                 if (data != null) {
                     $(".loader-box").css("display", "none");
@@ -72,11 +75,22 @@ project.controller("HttpPostController", function ($scope, $http) {
                 }
                 console.log(bd);
                 console.log(sym);
-            });
+                //highlight
+                $('textarea').highlightTextarea({
+                  words:[{
+                    color:'#1acff5',
+                    words:bd
+                  },{
+                    color:'#f3836c',
+                    words:sym
+                  }]
+                });
 
-		},function(data) {
-			console.error("error in posting");
-		});
+            });
+		    },
+        function(data) {
+			       console.error("error in posting");
+		    });
     };
 });
 

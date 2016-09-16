@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      "jquery-highlighttextarea",
+      "/Users/Brian/Desktop/ProjectWebsite/Project"
+    ]
+  ],
+  "_from": "jquery-highlighttextarea@latest",
+  "_id": "jquery-highlighttextarea@3.1.3",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/jquery-highlighttextarea",
+  "_nodeVersion": "5.4.0",
+  "_npmUser": {
+    "email": "gary.sieling@gmail.com",
+    "name": "garysieling"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "jquery-highlighttextarea",
+    "raw": "jquery-highlighttextarea",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/jquery-highlighttextarea/-/jquery-highlighttextarea-3.1.3.tgz",
+  "_shasum": "388ab9cd52d15231822e5b88076058d5fd242ea4",
+  "_shrinkwrap": null,
+  "_spec": "jquery-highlighttextarea",
+  "_where": "/Users/Brian/Desktop/ProjectWebsite/Project",
+  "author": {
+    "name": "Gary Sieling"
+  },
+  "bugs": {
+    "url": "https://github.com/garysieling/jquery-highlighttextarea/issues"
+  },
+  "dependencies": {},
+  "description": "Allows highlighting words and sentences in textareas",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.4.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "388ab9cd52d15231822e5b88076058d5fd242ea4",
+    "tarball": "https://registry.npmjs.org/jquery-highlighttextarea/-/jquery-highlighttextarea-3.1.3.tgz"
+  },
+  "gitHead": "c93d0b9eba452757a43c782169302c1233bc0c33",
+  "homepage": "https://github.com/garysieling/jquery-highlighttextarea",
+  "keywords": [
+    "textarea",
+    "input",
+    "highlight"
+  ],
+  "license": "MIT",
+  "main": "jquery.highlighttextarea.js",
+  "maintainers": [
+    {
+      "email": "gary.sieling@gmail.com",
+      "name": "garysieling"
+    }
+  ],
+  "name": "jquery-highlighttextarea",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/garysieling/jquery-highlighttextarea.git"
+  },
+  "scripts": {
+    "test": "grunt test --force"
+  },
+  "version": "3.1.3"
+}
