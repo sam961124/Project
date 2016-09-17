@@ -55,12 +55,12 @@ project.controller("HttpPostController", function ($scope, $http) {
         console.log($scope.detail);
         $http({
            method: 'POST',
-           url: 'http://52.41.60.7:3000',
+           url: 'http://four.ddns.net:3000',
            data: {'data':$scope.detail},
            headers: {'Content-Type': 'application/json'}
        })
        .then(function(data) {
-	        console.log("posted successfully");
+	    console.log("posted successfully");
             console.log(data.data);
             $(function(){
                 if (data != null) {
