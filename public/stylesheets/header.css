@@ -12,6 +12,8 @@
     font-size: 30px; }
     .header .header-logo a {
       text-decoration: none; }
+    .header .header-logo img {
+      height: 70px; }
   .header .header-info {
     height: 70px;
     line-height: 70px;
