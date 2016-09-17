@@ -19,6 +19,18 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
     $scope.numberOfPages=function(){
         return Math.ceil($scope.answers.length/$scope.pageSize);
     }
+
+    //test
+    $scope.bodyparts = ['鼻子' ,'眼睛' ,'肩膀' ,'屁股' ,'大腿'];
+    $scope.searchBody;
+
+    $scope.symptoms = ['濕疹' ,'水泡' ,'過敏' ,'毛囊炎' ,'青春痘'];
+    $scope.searchBody;
+
+    $scope.hideFilter = true;
+    $scope.toggle = function() {
+        $scope.hideFilter = !$scope.hideFilter;
+    }
 });
 
 project.controller("HttpPostController", function ($scope, $http) {
