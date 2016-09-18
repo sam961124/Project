@@ -32,21 +32,9 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
         $scope.hideFilter = !$scope.hideFilter;
     }
 
-    $('.dropdown-menu').on('click', function(event) {
-    event.stopPropagation();
-});
+    // select2 test
+    //$(".body-select").select2();
 
-$('.selectpicker').selectpicker({
-    container: 'body'
-});
-
-$('body').on('click', function(event) {
-    var target = $(event.target);
-    if (target.parents('.bootstrap-select').length) {
-        event.stopPropagation();
-        $('.bootstrap-select.open').removeClass('open');
-    }
-}); 
 
 });
 
