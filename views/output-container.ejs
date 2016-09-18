@@ -4,36 +4,31 @@
             搜尋結果
         </div>
     </div>
-    <div class="output-filter">
-        <div class="output-filter-button">
-            <input type="text" class="form-control"  placeholder="Search" style="width:80%; display: inline-block;">
-            <button type="button" class="filter-button" ng-click="toggle()">進階搜尋</button>
-        </div>
-        <div class="output-filter-container" ng-hide="hideFilter">
-            <div class="body-select-container" layout="row">
-                <label id="body-select-label">部位</label>
-                    <select    class="selectpicker form-control show-menu-arrow"
-                               data-live-search="true"
-                               ng-model="selectedBody"
-                               multiple
-                               title="請選擇或搜尋部位...">
-                        <option ng-value="bodypart"
-                                ng-repeat="bodypart in bodyparts | filter:searchBody"> {{bodypart}}
-                        </option>
-                    </select>
-            </div>
-
-            <div class="symptom-select-container" layout="row">
-                <label id="symptom-select-label">症狀</label>
-                    <select    class="selectpicker form-control show-menu-arrow"
-                               data-live-search="true"
-                               ng-model="selectedSymptom"
-                               multiple
-                               title="請選擇或搜尋症狀...">
-                        <option ng-value="symptom"
-                                   ng-repeat="symptom in symptoms | filter:searchSymptom"> {{symptom}}
-                        </option>
-                    </select>
+    <div class="input-group"> 
+        <input type="text" class="form-control"  placeholder="Search">
+        <div class="input-group-btn">
+            <div class="btn-group" role="group">
+                <div class="dropdown dropdown-lg">
+                    <button type="button" class="btn btn-default dropdown-toggle" id="menu-drop" data-toggle="dropdown" aria-expanded="true">
+                        <span class="caret"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="body">部位</label>
+                                    <select id="body-select" class="form-control" title="請選擇部位..." multiple>
+                                        <option>他長得好奇怪</option>
+                                        <option>他長得真的好奇怪</option>
+                                        <option>寫網頁好難QQ</option>
+                                    </select>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true">
+                    </span>
+                </button>
             </div>
         </div>
     </div>

@@ -13,43 +13,26 @@
     font-size: 25px;
     line-height: 40px;
     color: #ed5c15; }
-  .output-container .output-filter {
-    margin: 10px; }
-    .output-container .output-filter .output-filter-button {
-      text-align: left; }
-      .output-container .output-filter .output-filter-button .filter-button {
-        border-radius: 10px;
-        padding: 4px;
-        font-size: 20px;
-        background-color: transparent;
-        border: 1px solid #ed5c15;
-        color: #ed5c15; }
-        .output-container .output-filter .output-filter-button .filter-button:hover {
-          color: #7d0000; }
-        .output-container .output-filter .output-filter-button .filter-button:focus {
-          outline: 0; }
-    .output-container .output-filter .output-filter-container .body-select-container {
-      float: left;
-      width: 50%;
-      padding: 10px 5px; }
-      .output-container .output-filter .output-filter-container .body-select-container #body-select-label {
-        display: block;
-        text-align: center; }
-      .output-container .output-filter .output-filter-container .body-select-container a {
-        line-height: 0px;
-        font-size: 13px;
-        color: red; }
-    .output-container .output-filter .output-filter-container .symptom-select-container {
-      float: right;
-      width: 50%;
-      padding: 10px 5px; }
-      .output-container .output-filter .output-filter-container .symptom-select-container #symptom-select-label {
-        display: block;
-        text-align: center; }
-      .output-container .output-filter .output-filter-container .symptom-select-container a {
-        line-height: 0px;
-        font-size: 13px;
-        color: red; }
+  .output-container .input-group {
+    margin: 10px auto; }
+    .output-container .input-group .input-group-btn .btn-group {
+      display: flex !important; }
+    .output-container .input-group .btn-group .btn {
+      border-radius: 0;
+      margin-left: -1px; }
+    .output-container .input-group .btn-group .btn:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
+    .output-container .input-group .dropdown-menu {
+      margin-top: -1px;
+      padding: 6px 20px;
+      min-width: 580px;
+      min-height: 300px; }
+    .output-container .input-group .dropdown .dropdown-lg {
+      position: static !important; }
+    .output-container .input-group .form-horizontal .form-group {
+      margin-left: 0;
+      margin-right: 0; }
   .output-container .output-outcome {
     height: 300px;
     text-align: left;

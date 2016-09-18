@@ -31,6 +31,23 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
     $scope.toggle = function() {
         $scope.hideFilter = !$scope.hideFilter;
     }
+
+    $('.dropdown-menu').on('click', function(event) {
+    event.stopPropagation();
+});
+
+$('.selectpicker').selectpicker({
+    container: 'body'
+});
+
+$('body').on('click', function(event) {
+    var target = $(event.target);
+    if (target.parents('.bootstrap-select').length) {
+        event.stopPropagation();
+        $('.bootstrap-select.open').removeClass('open');
+    }
+}); 
+
 });
 
 project.controller("HttpPostController", function ($scope, $http) {
