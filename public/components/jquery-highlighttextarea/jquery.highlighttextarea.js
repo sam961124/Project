@@ -197,6 +197,7 @@
         if (this.active) {
             this.highlight();
         }
+        console.log(this.settings.words)
     };
 
     /*
@@ -518,7 +519,7 @@
         return out;
     };
 
-    
+
     /*
      * Formats a list of ranges into a hash of arrays (Color => Ranges list)
      * @param ranges {mixed}
@@ -602,7 +603,8 @@
     // ===============================
     $.fn.highlightTextarea = function(option) {
         var args = arguments;
-
+        console.log(args);
+        console.log("Yes");
         return this.each(function() {
             var $this = $(this),
                 data = $this.data('highlighter'),

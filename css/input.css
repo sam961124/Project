@@ -1,0 +1,68 @@
+.input-container {
+  display: none;
+  min-height: 500px;
+  background-color: #ffea95;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 30px 0;
+  overflow: hidden;
+  text-align: center; }
+  .input-container .input-header {
+    height: 40px; }
+  .input-container .input-header-title {
+    font-size: 25px;
+    line-height: 40px;
+    color: #7d0000; }
+  .input-container .input-detail {
+    text-align: left;
+    font-size: 20px;
+    padding: 20px 40px; }
+  .input-container textarea::-webkit-input-placeholder {
+    color: #7d0000; }
+  .input-container textarea {
+    background-color: transparent;
+    border-color: #7d0000;
+    color: black; }
+    .input-container textarea:focus {
+      border-color: #7d0000;
+      box-shadow: none;
+      outline: 0; }
+  .input-container .form-control {
+    font-size: 20px; }
+  .input-container .btn-submit {
+    padding: 10px 20px;
+    margin-top: 30px;
+    color: white;
+    background-color: #7d0000;
+    font-size: 20px;
+    position: relative;
+    bottom: 0;
+    -webkit-transition: bottom 0.3s ease-out;
+    transition: bottom 0.15s ease-out; }
+    .input-container .btn-submit:hover {
+      bottom: 5px; }
+    .input-container .btn-submit:focus {
+      outline: 0; }
+    @media screen and (max-width: 370px) {
+      .input-container .btn-submit {
+        margin-top: 10px; } }
+  .input-container .highlight-bodypart {
+    color: yellow; }
+  .input-container .highlight-symtom {
+    color: red; }
+  @media screen and (max-width: 767px) {
+    .input-container {
+      min-height: 400px;
+      margin-top: 10px;
+      padding: 20px 0; } }
+  @media screen and (max-width: 370px) {
+    .input-container {
+      min-height: 380px;
+      margin-top: 0; } }
+  .input-container mark {
+    padding: 0 3px;
+    margin: -1px -4px;
+    border-radius: 0.5em;
+    border: 1px solid pink; }
+
+/*# sourceMappingURL=input.css.map */
