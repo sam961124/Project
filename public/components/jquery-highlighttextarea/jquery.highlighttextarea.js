@@ -603,8 +603,6 @@
     // ===============================
     $.fn.highlightTextarea = function(option) {
         var args = arguments;
-        console.log(args);
-        console.log("Yes");
         return this.each(function() {
             var $this = $(this),
                 data = $this.data('highlighter'),
