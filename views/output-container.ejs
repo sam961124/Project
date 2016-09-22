@@ -40,7 +40,7 @@
     <div class="output-outcome">
         <div class="output-detail" ng-repeat="answer in answers| startFrom:currentPage*pageSize | limitTo:pageSize">
             <div class="output-detail-title">
-                <a ng-href="{{answer.link}}">{{answer.title}}</a>
+                <button ng-click="getResult(answer._id)">{{answer.title}}</button>
             </div>
         </div>
     </div>
