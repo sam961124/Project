@@ -31,8 +31,10 @@
 .highlightTextarea mark {
   line-height:inherit;
   color:transparent;
-  margin:0;
-  padding:0;
+  padding: 0 3px;
+  margin: -1px -4px;
+  border-radius: 0.5em;
+  border: 1px solid pink;
 }
 .highlightTextarea textarea,
 .highlightTextarea input {

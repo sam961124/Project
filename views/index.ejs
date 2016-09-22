@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="project">
-  <head>
+
+<head>
     <title>Project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,32 +32,34 @@
         new WOW().init();
     </script>
     <script>
-    $(function(){
-        $(".btn-start").click(function(){
-            $(".init-container").css("display", "none");
-            $(".input-container").css("display", "block");
-        })
-        $(".btn-submit").click(function(){
-            if ($(window).width() <= 767) {
-                $(".input-container").css("display", "none");
-             }
-            $(".output-container").css("display", "none");
-            $(".loader-box").css("display", "block");
-        })
-        //test
-        //$(".btn-warning").click(function(){
+        $(function() {
+            $(".btn-start").click(function() {
+                $(".init-container").css("display", "none");
+                $(".input-container").css("display", "block");
+            })
+            $(".btn-submit").click(function() {
+                    if ($(window).width() <= 767) {
+                        $(".input-container").css("display", "none");
+                    }
+                    $(".output-container").css("display", "none");
+                    $(".loader-box").css("display", "block");
+                })
+                //test
+                //$(".btn-warning").click(function(){
 
-        //})
-    });
+            //})
+        });
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <%- include header %>
-    <div class="container" ng-controller="HttpPostController">
-        <%- include init-container %>
-        <%- include input-container %>
-        <%- include output-container %>
-    </div>
-    <%- include footer %>
-  </body>
+        <div class="container" ng-controller="HttpPostController">
+            <%- include init-container %>
+                <%- include input-container %>
+                    <%- include output-container %>
+        </div>
+        <%- include footer %>
+</body>
+
 </html>

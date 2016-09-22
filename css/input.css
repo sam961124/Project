@@ -6,10 +6,7 @@
   margin-top: 50px;
   padding: 30px 0;
   overflow: hidden;
-  text-align: center;
-  /* background and positioning */
-  /* size and formatting */
-  /* highlights */ }
+  text-align: center; }
   .input-container .input-header {
     height: 40px; }
   .input-container .input-header-title {
@@ -40,8 +37,8 @@
     font-size: 20px;
     position: relative;
     bottom: 0;
-    -webkit-transition: bottom .3s ease-out;
-    transition: bottom .15s ease-out; }
+    -webkit-transition: bottom 0.3s ease-out;
+    transition: bottom 0.15s ease-out; }
     .input-container .btn-submit:hover {
       bottom: 5px; }
     .input-container .btn-submit:focus {
@@ -61,20 +58,11 @@
   @media screen and (max-width: 370px) {
     .input-container {
       min-height: 380px;
-      margin-top: 0px; } }
-  .input-container .hwt-container {
-    background-color: #fff; }
-  .input-container .hwt-content {
-    width: 500px;
-    height: 100px;
-    padding: 20px;
-    color: #555;
-    font: 18px/25px 'Roboto Mono', sans-serif; }
-  .input-container .hwt-content mark {
-    border-radius: 3px; }
-  .input-container .hwt-content mark:nth-of-type(2n) {
-    background-color: #cfdeab; }
-  .input-container .hwt-content mark:nth-of-type(2n+1) {
-    background-color: #b1d5e5; }
+      margin-top: 0; } }
+  .input-container mark {
+    padding: 0 3px;
+    margin: -1px -4px;
+    border-radius: 0.5em;
+    border: 1px solid pink; }
 
 /*# sourceMappingURL=input.css.map */
