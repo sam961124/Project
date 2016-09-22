@@ -54,10 +54,15 @@
     height: 300px;
     text-align: left;
     overflow: auto; }
-    .output-container .output-outcome a {
-      line-height: 50px;
+    .output-container .output-outcome button {
+      border: none;
+      outline: 0;
+      background-color: transparent;
+      line-height: 40px;
       font-size: 18px;
       color: #ed5c15; }
+      .output-container .output-outcome button:hover {
+        text-decoration: underline; }
     @media screen and (max-width: 767px) {
       .output-container .output-outcome {
         padding: 0px 20px; } }

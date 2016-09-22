@@ -2,17 +2,6 @@ var project = angular.module('project', ['ngRoute']);
 var resData = "";
 
 project.controller('outcomeFormController', function($element, $scope, $window) {
-     $scope.answers = [
-         {title:"我的鼻子超級癢！！！", link:"https://google.com"},
-         {title:"鼻子上長了奇怪的東西", link:"https://google.com"},
-         {title:"在鼻子上發現紅疹", link:"https://google.com"},
-         {title:"癢癢又紅紅又怪怪又硬硬的", link:"https://google.com"},
-         {title:"我覺得鼻子靠腰癢", link:"https://google.com"},
-         {title:"鼻子超他媽的靠腰痛", link:"https://google.com"},
-         {title:"為什麼都只有鼻子有問題", link:"https://google.com"},
-         {title:"我也不知道為什麼你自己問的", link:"https://google.com"},
-         {title:"鼻子好癢好痛好煩啊啊啊啊", link:"https://google.com"}
-    ];
     $scope.currentPage = 0;
     $scope.pageSize = 6;
     $scope.data = [];
@@ -40,7 +29,7 @@ project.controller("HttpPostController", function ($scope, $http) {
     var sym_index = 0;*/
     //user input
     $scope.detail = null;
-
+    $scope.answers = [];
     //init data array & index
     $scope.Clear = function () {
         bd = [];
@@ -51,10 +40,9 @@ project.controller("HttpPostController", function ($scope, $http) {
 
     //post to server
     $scope.SendData = function () {
-        console.log($scope.detail);
         $http({
            method: 'POST',
-           url: 'http://52.41.60.7:3000',
+           url: 'http://four.ddns.net:3000',
            data: {'data':$scope.detail},
            headers: {'Content-Type': 'application/json'}
        })
@@ -66,6 +54,7 @@ project.controller("HttpPostController", function ($scope, $http) {
             var sym = [];
             var sym_index = 0;
             $(function(){
+                $scope.answers = data.data.files;
                 if (data != null) {
                     $(".loader-box").css("display", "none");
                     $(".output-container").addClass("animated fadeInRight");
@@ -104,6 +93,25 @@ project.controller("HttpPostController", function ($scope, $http) {
 			       console.error("error in posting");
 		    });
     };
+    $scope.getResult = function(id){
+        $http({
+           method: 'GET',
+           url: 'http://four.ddns.net:3000/doc/'+id,
+           headers: {'Content-Type': 'application/json'}
+       })
+       .then(function(data) {
+            console.log("get successfully");
+            $scope.result = data.data;
+            $(".result-container").addClass("animated fadeInRight");
+            $(".result-container").css("display", "block");
+            $(".output-container").css("display", "none");
+        })
+    }
+    $scope.goBack = function() {
+        $(".output-container").addClass("animated fadeInRight");
+        $(".output-container").css("display", "block");
+        $(".result-container").css("display", "none");
+    }
 });
 
 //control the pagination

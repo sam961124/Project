@@ -1,0 +1,17 @@
+.result-container {
+  display: none;
+  min-height: 500px;
+  background-color: #ffea95;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 30px 50px;
+  overflow: hidden;
+  text-align: center; }
+  .result-container .result-header {
+    height: 40px; }
+  .result-container .result-header-title {
+    font-size: 25px;
+    line-height: 40px;
+    color: #ed5c15; }
+
+/*# sourceMappingURL=result.css.map */
