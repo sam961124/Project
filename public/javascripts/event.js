@@ -20,6 +20,11 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
     $scope.toggle = function() {
         $scope.hideFilter = !$scope.hideFilter;
     }
+
+    // select2 test
+    //$(".body-select").select2();
+
+
 });
 
 project.controller("HttpPostController", function ($scope, $http) {
