@@ -1,13 +1,16 @@
 var project = angular.module('project', ['ngRoute']);
 var resData = "";
 
+
+/*$(document).ready(function () {
+    //initialize swiper when document ready
+    var mySwiper = new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true
+    })
+});*/
 project.controller('outcomeFormController', function($element, $scope, $window) {
-    $scope.currentPage = 0;
-    $scope.pageSize = 6;
-    $scope.data = [];
-    $scope.numberOfPages=function(){
-        return Math.ceil($scope.answers.length/$scope.pageSize);
-    }
 
     //test
     $scope.bodyparts = ['鼻子' ,'眼睛' ,'肩膀' ,'屁股' ,'大腿'];
@@ -36,13 +39,24 @@ project.controller("HttpPostController", function ($scope, $http) {
     //user input
     $scope.detail = null;
     $scope.answers = [];
+
     //init data array & index
     $scope.Clear = function () {
         bd = [];
         sym = [];
         bd_index = 0;
         sym_index = 0;
+        $scope.currentPage = 0;
     };
+
+
+    //pagination
+    $scope.currentPage = 0;
+    $scope.pageSize = 6;
+    $scope.data = [];
+    $scope.numberOfPages=function(){
+        return Math.ceil($scope.answers.length/$scope.pageSize);
+    }
 
     //post to server
     $scope.SendData = function () {

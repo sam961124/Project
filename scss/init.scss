@@ -1,23 +1,35 @@
 .init-container {
+    min-height: 500px;
     margin-top: 50px;
     padding: 0;
     overflow: hidden;
     text-align: center;
     .init-imgbox {
         img {
-            width: 100%;
+            width: 180px;
             display: inline-block;
         }
     }
+    .init-box-1{
+        display: none;
+    }
+    .init-box-2{
+        display: none;
+    }
+    .init-box-3{
+        display: none;
+    }
     .init-detail {
-        margin: 30px 0;
+        margin: 20px 30px;
         font-weight: bold;
         font-size: 24px;
     }
     .btn-start {
+        display: none;
+        margin-top: 75px;
         padding: 10px 20px;
         color: white;
-        background-color: #7d0000;
+        background-color: #0e324e;
         font-size: 20px;
         position: relative;
         bottom: 0;
@@ -31,6 +43,50 @@
         }
     }
     @media screen and (max-width: 767px) {
-        margin-top: 0;
+        display: none;
+    }
+}
+
+//for mobile
+.swiper-container {
+    min-height: 500px;
+    display: none;
+    margin: 0 40px;
+    margin-top: 20px;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    .init-imgbox {
+        img {
+            width: 180px;
+            display: inline-block;
+        }
+    }
+    .init-detail {
+        margin: 20px 30px;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .btn-start {
+        margin-top: 40px;
+        padding: 10px 20px;
+        color: white;
+        background-color: #0e324e;
+        font-size: 20px;
+        position: relative;
+        bottom: 0;
+        &:focus {
+            outline: 0;
+        }
+    }
+    .swiper-pagination {
+        bottom: 130px;
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #0e324e;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        display: block;
     }
 }
