@@ -1,0 +1,140 @@
+.output-container {
+  display: none;
+  min-height: 500px;
+  background-color: #ffea95;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 30px 50px;
+  overflow: hidden;
+  text-align: center; }
+  .output-container .output-header {
+    height: 40px; }
+  .output-container .output-header-title {
+    font-size: 25px;
+    line-height: 40px;
+    color: #ed5c15; }
+  .output-container .output-filter {
+    margin: 10px; }
+    .output-container .output-filter .output-filter-button {
+      text-align: left; }
+      .output-container .output-filter .output-filter-button .filter-button {
+        border-radius: 10px;
+        padding: 4px;
+        font-size: 20px;
+        background-color: transparent;
+        border: 1px solid #ed5c15;
+        color: #ed5c15; }
+        .output-container .output-filter .output-filter-button .filter-button:hover {
+          color: #7d0000; }
+        .output-container .output-filter .output-filter-button .filter-button:focus {
+          outline: 0; }
+    .output-container .output-filter .output-filter-container .body-select-container {
+      float: left;
+      width: 50%;
+      padding: 10px 5px; }
+      .output-container .output-filter .output-filter-container .body-select-container #body-select-label {
+        display: block;
+        text-align: center; }
+      .output-container .output-filter .output-filter-container .body-select-container a {
+        line-height: 0px;
+        font-size: 13px;
+        color: red; }
+    .output-container .output-filter .output-filter-container .symptom-select-container {
+      float: right;
+      width: 50%;
+      padding: 10px 5px; }
+      .output-container .output-filter .output-filter-container .symptom-select-container #symptom-select-label {
+        display: block;
+        text-align: center; }
+      .output-container .output-filter .output-filter-container .symptom-select-container a {
+        line-height: 0px;
+        font-size: 13px;
+        color: red; }
+  .output-container .output-outcome {
+    height: 300px;
+    text-align: left;
+    overflow: auto; }
+    .output-container .output-outcome a {
+      line-height: 50px;
+      font-size: 18px;
+      color: #ed5c15; }
+    @media screen and (max-width: 767px) {
+      .output-container .output-outcome {
+        padding: 0px 20px; } }
+  .output-container .page-container {
+    text-align: center;
+    color: #ed5c15;
+    font-size: 20px; }
+    .output-container .page-container button {
+      border: none;
+      border-radius: 20px;
+      background-color: transparent;
+      margin: 0 50px;
+      position: relative;
+      bottom: 0;
+      -webkit-transition: bottom .3s ease-out;
+      transition: bottom .15s ease-out; }
+      .output-container .page-container button:hover {
+        bottom: 2px; }
+      .output-container .page-container button:focus {
+        outline: 0; }
+      @media screen and (max-width: 767px) {
+        .output-container .page-container button {
+          margin: 0 20px; } }
+  @media screen and (max-width: 767px) {
+    .output-container {
+      min-height: 400px;
+      margin-top: 10px;
+      padding: 20px 0; } }
+  @media screen and (max-width: 370px) {
+    .output-container {
+      min-height: 380px;
+      margin-top: 0px; } }
+
+.loader-box {
+  position: relative;
+  display: none;
+  min-height: 500px;
+  margin-top: 50px;
+  padding: 30px 50px;
+  text-align: center; }
+  .loader-box .loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    height: 30px;
+    line-height: 30px; }
+  .loader-box .loader {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #7d0000;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1.5s linear infinite; }
+  @media screen and (max-width: 767px) {
+    .loader-box {
+      min-height: 400px;
+      margin-top: 10px;
+      padding: 20px 0; } }
+  @media screen and (max-width: 370px) {
+    .loader-box {
+      min-height: 380px;
+      margin-top: 0px; } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=output.css.map */

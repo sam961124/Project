@@ -7,35 +7,43 @@
     padding: 30px 0;
     overflow: hidden;
     text-align: center;
+
     .input-header {
         height: 40px;
     }
+
     .input-header-title {
         font-size: 25px;
         line-height: 40px;
         color: #7d0000;
     }
+
     .input-detail {
         text-align: left;
         font-size: 20px;
         padding: 20px 40px;
     }
+
     textarea::-webkit-input-placeholder {
         color: #7d0000;
     }
+
     textarea {
         background-color: transparent;
         border-color: #7d0000;
         color: black;
+
         &:focus {
             border-color: #7d0000;
             box-shadow: none;
             outline: 0;
         }
     }
+
     .form-control {
         font-size: 20px;
     }
+
     .btn-submit {
         padding: 10px 20px;
         margin-top: 30px;
@@ -44,17 +52,27 @@
         font-size: 20px;
         position: relative;
         bottom: 0;
-        -webkit-transition: bottom .3s ease-out;
-        transition: bottom .15s ease-out;
+        -webkit-transition: bottom 0.3s ease-out;
+        transition: bottom 0.15s ease-out;
+
         &:hover {
             bottom: 5px;
         }
+
         &:focus {
             outline: 0;
         }
         @media screen and (max-width: 370px) {
             margin-top: 10px;
         }
+    }
+
+    .highlight-bodypart {
+        color: yellow;
+    }
+
+    .highlight-symtom {
+        color: red;
     }
     @media screen and (max-width: 767px) {
         min-height: 400px;
@@ -63,6 +81,13 @@
     }
     @media screen and (max-width: 370px) {
         min-height: 380px;
-        margin-top: 0px;
+        margin-top: 0;
+    }
+
+    mark {
+        padding: 0 3px;
+        margin: -1px -4px;
+        border-radius: 0.5em;
+        border: 1px solid pink;
     }
 }

@@ -13,10 +13,10 @@ var resData = "";
 project.controller('outcomeFormController', function($element, $scope, $window) {
 
     //test
-    $scope.bodyparts = ['鼻子' ,'眼睛' ,'肩膀' ,'屁股' ,'大腿'];
+    $scope.bodyparts = ['鼻子', '眼睛', '肩膀', '屁股', '大腿'];
     $scope.searchBody;
 
-    $scope.symptoms = ['濕疹' ,'水泡' ,'過敏' ,'毛囊炎' ,'青春痘'];
+    $scope.symptoms = ['濕疹', '水泡', '過敏', '毛囊炎', '青春痘'];
     $scope.searchBody;
 
     $scope.hideFilter = true;
@@ -30,18 +30,17 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
 
 });
 
-project.controller("HttpPostController", function ($scope, $http) {
+project.controller("HttpPostController", function($scope, $http) {
     var bd = [];
     var bd_index = 0;
     var sym = [];
     var sym_index = 0;
-
     //user input
     $scope.detail = null;
     $scope.answers = [];
 
     //init data array & index
-    $scope.Clear = function () {
+    $scope.Clear = function() {
         bd = [];
         sym = [];
         bd_index = 0;
@@ -59,43 +58,75 @@ project.controller("HttpPostController", function ($scope, $http) {
     }
 
     //post to server
-    $scope.SendData = function () {
-        $http({
-           method: 'POST',
-           url: 'http://four.ddns.net:3000',
-           data: {'data':$scope.detail},
-           headers: {'Content-Type': 'application/json'}
-       })
-       .then(function(data) {
-	    console.log("posted successfully");
-            $(function(){
-                $scope.answers = data.data.files;
-                if (data != null) {
-                    $(".loader-box").css("display", "none");
-                    $(".output-container").addClass("animated fadeInRight");
-                    $(".output-container").css("display", "block");
-                }
-                //find out body part & symptom
-                for (i = 0; i < data.data.bd_tag.length; i++)
-                {
-                    if (data.data.bd_tag[i].charAt(0) == "B")
-                    {
-                        bd[bd_index] = data.data.raw[i];
-                        bd_index++;
-                    }
-                    if (data.data.sym_tag[i].charAt(0) == "B")
-                    {
-                        sym[sym_index] = data.data.raw[i];
-                        sym_index++;
-                    }
-                }
-                console.log(bd);
-                console.log(sym);
-            });
 
-		},function(data) {
-			console.error("error in posting");
-		});
+    $scope.SendData = function() {
+        console.log($scope.detail);
+        $http({
+                method: 'POST',
+                url: 'http://four.ddns.net:3000',
+                data: {
+                    'data': $scope.detail
+                },
+                headers: {
+                    'Content-Type': 'application/json'
+
+                }
+            })
+            .then(function(data) {
+                    console.log("posted successfully");
+                    console.log(data.data);
+                    $('textarea').highlightTextarea('destroy');
+                    var bd = [];
+                    var bd_index = 0;
+                    var sym = [];
+                    var sym_index = 0;
+                    $(function() {
+                        if (data != null) {
+                            $scope.answers = data.data.files;
+                            $(".loader-box").css("display", "none");
+                            $(".output-container").addClass("animated fadeInRight");
+                            $(".output-container").css("display", "block");
+                        }
+                        //find out body part & symptom
+                        for (i = 0; i < data.data.bd_tag.length; i++) {
+                            if (data.data.bd_tag[i].charAt(0) == "B") {
+                                bd[bd_index] = data.data.raw[i];
+                                bd_index++;
+                            }
+                            if (data.data.sym_tag[i].charAt(0) == "B") {
+                                sym[sym_index] = data.data.raw[i];
+                                sym_index++;
+                            }
+                        }
+                        console.log(bd);
+                        console.log(sym);
+                        if (bd.length == 0 && sym.length != 0) {
+                            $('textarea').highlightTextarea({
+                                color: '#f3836c',
+                                words: sym
+                            });
+                        } else if (sym.length == 0 && bd.length != 0) {
+                            $('textarea').highlightTextarea({
+                                color: '#1acff5',
+                                words: bd
+                            });
+                        } else if (sym.length != 0 && bd.length != 0) {
+                            $('textarea').highlightTextarea({
+                                words: [{
+                                    color: '#1acff5',
+                                    words: bd,
+                                }, {
+                                    color: '#f3836c',
+                                    words: sym,
+                                }],
+                                id:'HighlightTextarea'
+                            });
+                        }
+                    });
+                },
+                function(data) {
+                    console.error("error in posting");
+                });
     };
     $scope.getResult = function(id){
         $http({
