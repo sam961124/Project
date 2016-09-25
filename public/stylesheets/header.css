@@ -60,7 +60,7 @@ li {
     line-height: 70px;
     top: 0; }
 
-  nav ul, nav:active ul {
+  nav ul, ul {
     display: none;
     position: absolute;
     padding: 2px 0;
@@ -77,9 +77,6 @@ li {
     padding: 10px 0;
     margin: 0; }
     nav li a {
-      padding-bottom: 7px; }
-
-  nav:hover ul {
-    display: block; } }
+      padding-bottom: 7px; } }
 
 /*# sourceMappingURL=header.css.map */

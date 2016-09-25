@@ -5,6 +5,10 @@ $(function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
         });
+        $(".swiper-container").addClass("animated fadeOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass('animated fadeOut');
+            $(this).css("display", "none");
+        });
         $(".input-container").addClass("animated fadeOutLeft").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass('animated fadeOutLeft');
             $(this).css("display", "none");
@@ -17,6 +21,7 @@ $(function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
         });
+        $("ul").css("display", "none");
     });
 
     $(".map").click(function(){
@@ -38,12 +43,14 @@ $(function(){
         }, 1000);
     });
 
-
 });
 
 
 //init-container event
 $(function(){
+    $("nav").on("tap", function(){
+        $("ul").css("display", "block");
+    });
     $(".btn-start").click(function(){
         $(".init-container").css("display", "none");
         $(".swiper-container").css("display", "none");
@@ -90,5 +97,5 @@ $(function(){
         $(".result-container").css("display", "none");
         $(".output-container").css("display", "none");
         $(".loader-box").css("display", "block");
-    })
+    });
 });

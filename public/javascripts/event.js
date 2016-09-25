@@ -16,6 +16,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     var bd_index = 0;
     var sym = [];
     var sym_index = 0;
+    var click_counter = 0;
     //user input
     $scope.detail = null;
     $scope.answers = [];
@@ -33,7 +34,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
 
     //pagination
     $scope.currentPage = 0;
-    $scope.pageSize = 6;
+    $scope.pageSize = 4;
     $scope.data = [];
     $scope.numberOfPages=function(){
         return Math.ceil($scope.answers.length/$scope.pageSize);
@@ -67,6 +68,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                             });
                             $(".output-container").css("display", "block");
                         }
+
                         //find out body part & symptom
                         for (i = 0; i < data.data.bd_tag.length; i++) {
                             if (data.data.bd_tag[i].charAt(0) == "B") {
@@ -80,8 +82,8 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                         }
                         $scope.bodyparts = bd;
                         $scope.symptoms = sym;
-                        console.log(bd);
-                        console.log(sym);
+
+                        //highlight Textarea
                         if (bd.length == 0 && sym.length != 0) {
                             $('textarea').highlightTextarea({
                                 color: '#f3836c',
@@ -111,27 +113,23 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                 });
     };
     $scope.getResult = function(id){
-        $http({
-           method: 'GET',
-           url: 'http://four.ddns.net:3000/doc/'+id,
-           headers: {'Content-Type': 'application/json'}
-       })
-       .then(function(data) {
-            console.log("get successfully");
-            $scope.result = data.data;
-            $(".result-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $(this).removeClass('animated fadeInRight')
-            });
-            $(".result-container").css("display", "block");
-            $(".output-container").css("display", "none");
-        })
-    }
-    $scope.goBack = function() {
-        $(".output-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(this).removeClass('animated fadeInRight')
-        });
-        $(".output-container").css("display", "block");
-        $(".result-container").css("display", "none");
+        if($("."+id).css("display") == "block")
+        {
+            $("."+id).css("display", "none");
+        }
+        else
+        {
+            $(".output-detail-receive").css("display", "none");
+            $http({
+               method: 'GET',
+               url: 'http://four.ddns.net:3000/doc/'+id,
+               headers: {'Content-Type': 'application/json'}
+            })
+            .then(function(data) {
+                $("."+id).css("display", "block");
+                $scope.result = data.data;
+            })
+        }
     }
     $scope.hideFilter = true;
     $scope.toggle = function() {

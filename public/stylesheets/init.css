@@ -34,10 +34,11 @@
       outline: 0; }
   @media screen and (max-width: 767px) {
     .init-container {
+      min-height: 400px;
       display: none; } }
 
 .swiper-container {
-  min-height: 500px;
+  min-height: 450px;
   display: none;
   margin: 0 40px;
   margin-top: 20px;
@@ -45,12 +46,15 @@
   overflow: hidden;
   text-align: center; }
   .swiper-container .init-imgbox img {
-    width: 180px;
+    width: 150px;
     display: inline-block; }
   .swiper-container .init-detail {
     margin: 20px 30px;
     font-weight: bold;
     font-size: 24px; }
+    @media screen and (max-width: 330px) {
+      .swiper-container .init-detail {
+        font-size: 20px; } }
   .swiper-container .btn-start {
     margin-top: 40px;
     padding: 10px 20px;
@@ -62,7 +66,7 @@
     .swiper-container .btn-start:focus {
       outline: 0; }
   .swiper-container .swiper-pagination {
-    bottom: 130px; }
+    bottom: 120px; }
     .swiper-container .swiper-pagination .swiper-pagination-bullet-active {
       opacity: 1;
       background: #0e324e; }
