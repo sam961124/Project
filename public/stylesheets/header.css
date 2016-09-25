@@ -77,6 +77,9 @@ li {
     padding: 10px 0;
     margin: 0; }
     nav li a {
-      padding-bottom: 7px; } }
+      padding-bottom: 7px; }
+
+  nav:hover ul {
+    display: block; } }
 
 /*# sourceMappingURL=header.css.map */

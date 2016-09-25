@@ -21,7 +21,6 @@ $(function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
         });
-        $("ul").css("display", "none");
     });
 
     $(".map").click(function(){
@@ -48,9 +47,6 @@ $(function(){
 
 //init-container event
 $(function(){
-    $("nav").on("tap", function(){
-        $("ul").css("display", "block");
-    });
     $(".btn-start").click(function(){
         $(".init-container").css("display", "none");
         $(".swiper-container").css("display", "none");
@@ -98,4 +94,10 @@ $(function(){
         $(".output-container").css("display", "none");
         $(".loader-box").css("display", "block");
     });
+});
+
+
+$(document).bind("mobileinit", function(){
+    $.mobile.loadingMessage = false;
+    $.mobile.hidePageLoadingMsg();
 });
