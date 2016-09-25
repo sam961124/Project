@@ -10,25 +10,6 @@ var resData = "";
       loop: true
     })
 });*/
-project.controller('outcomeFormController', function($element, $scope, $window) {
-
-    //test
-    $scope.bodyparts = ['鼻子', '眼睛', '肩膀', '屁股', '大腿'];
-    $scope.searchBody;
-
-    $scope.symptoms = ['濕疹', '水泡', '過敏', '毛囊炎', '青春痘'];
-    $scope.searchBody;
-
-    $scope.hideFilter = true;
-    $scope.toggle = function() {
-        $scope.hideFilter = !$scope.hideFilter;
-    }
-
-    // select2 test
-    //$(".body-select").select2();
-
-
-});
 
 project.controller("HttpPostController", function($scope, $http, $cookies) {
     var bd = [];
@@ -38,6 +19,8 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     //user input
     $scope.detail = null;
     $scope.answers = [];
+    $scope.bodyparts = [];
+    $scope.symptoms = [];
     //init data array & index
     $scope.Clear = function() {
         bd = [];
@@ -75,10 +58,6 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
             .then(function(data) {
                     console.log("posted successfully");
                     $('textarea').highlightTextarea('destroy');
-                    var bd = [];
-                    var bd_index = 0;
-                    var sym = [];
-                    var sym_index = 0;
                     $(function() {
                         if (data != null) {
                             $scope.answers = data.data.files;
@@ -99,6 +78,8 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                                 sym_index++;
                             }
                         }
+                        $scope.bodyparts = bd;
+                        $scope.symptoms = sym;
                         console.log(bd);
                         console.log(sym);
                         if (bd.length == 0 && sym.length != 0) {
@@ -151,6 +132,10 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
         });
         $(".output-container").css("display", "block");
         $(".result-container").css("display", "none");
+    }
+    $scope.hideFilter = true;
+    $scope.toggle = function() {
+        $scope.hideFilter = !$scope.hideFilter;
     }
 });
 
