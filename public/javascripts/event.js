@@ -21,6 +21,12 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     $scope.answers = [];
     $scope.bodyparts = [];
     $scope.symptoms = [];
+    //function to add to scope detail on click
+    $scope.AddDetail = function(event) {
+        $scope.detail = $(event.target).text();
+    };
+
+
     //init data array & index
     $scope.Clear = function() {
         bd = [];
@@ -35,7 +41,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     $scope.currentPage = 0;
     $scope.pageSize = 6;
     $scope.data = [];
-    $scope.numberOfPages=function(){
+    $scope.numberOfPages = function(){
         return Math.ceil($scope.answers.length/$scope.pageSize);
     }
 

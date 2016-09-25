@@ -5,6 +5,10 @@ $(function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
         });
+        $(".swiper-container").addClass("animated fadeOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass('animated fadeOut');
+            $(this).css("display", "none");
+        });
         $(".input-container").addClass("animated fadeOutLeft").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass('animated fadeOutLeft');
             $(this).css("display", "none");
@@ -37,7 +41,6 @@ $(function(){
             $(".history-container").css("display", "block");
         }, 1000);
     });
-
 
 });
 
@@ -90,5 +93,11 @@ $(function(){
         $(".result-container").css("display", "none");
         $(".output-container").css("display", "none");
         $(".loader-box").css("display", "block");
-    })
+    });
+});
+
+
+$(document).bind("mobileinit", function(){
+    $.mobile.loadingMessage = false;
+    $.mobile.hidePageLoadingMsg();
 });

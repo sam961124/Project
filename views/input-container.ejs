@@ -6,9 +6,30 @@
     </div>
     <form>
         <div class="input-detail">
-            <textarea  placeholder="請輸入您的症狀" name="input" class="form-control" ng-model="detail" rows="6"></textarea>
+            <textarea  placeholder="請輸入您的症狀" name="input" class="form-control" id="symptom-input" ng-model="detail" rows="6"></textarea>
             </script>
         </div>
-        <button type="button" class="btn btn-submit" ng-click=" Clear(); SendData()">送出</button>
+        <div class="hot-topic">
+            <div class="hot">
+                <img src="images/hot.png"></img>
+            </div>
+            <div class="hot-topic-one">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">青春痘</button>
+            </div>
+            <div class="hot-topic-two">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">過敏</button>
+            </div>
+            <div class="hot-topic-three">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">疹子</button>
+            </div>
+            <div class="hot-topic-four">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">毛囊炎</button>
+            </div>
+            <div class="hot-topic-five">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">病毒疣</button>
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-submit" ng-click=" Clear(); SendData()">送出</button>    
     </form>
 </div>

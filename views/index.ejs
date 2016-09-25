@@ -32,12 +32,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
 
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
-    <script src="/javascripts/event.js"></script>
     <script src="/components/jquery/dist/jquery.min.js"></script>
+    <script src="/javascripts/event.js"></script>
     <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
 
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <%- include header %>
@@ -53,12 +54,11 @@
             paginationClickable: true
         });
 
-        //$("label").css("color", "red");
-        $('.body-select').multiselect();
+        /*$('.body-select').multiselect();
         $('.dropdown-menu').on('click', function(event) {
             event.stopPropagation();
         });
-
+        */
 
         </script>
         <script src="javascripts/animation.js"></script>
@@ -70,6 +70,14 @@
     
     $(function(){
         
+        $('.dropdown-menu').on('click', function(event) {
+            event.stopPropagation();
+        });
+        
+        //$(".btn-link").click(function(){
+        //    $("#symptom-input").val($('#symptom-input').val()+ $(this).text());
+        //})
+
         $(".btn-start").click(function(){
             $(".init-container").css("display", "none");
             $(".swiper-container").css("display", "none");
