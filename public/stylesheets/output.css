@@ -61,8 +61,10 @@
       margin-left: 20px;
       width: 80%; }
     .output-container .output-outcome .output-detail-question {
+      line-height: 25px;
       color: #0e324e; }
     .output-container .output-outcome .output-detail-answer {
+      line-height: 25px;
       margin-top: 20px; }
   .output-container .page-container {
     text-align: center;
