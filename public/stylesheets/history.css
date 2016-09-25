@@ -1,0 +1,11 @@
+.history-container {
+  display: none;
+  min-height: 500px;
+  background-color: #ffea95;
+  border-radius: 20px;
+  margin-top: 50px;
+  padding: 30px 50px;
+  overflow: hidden;
+  text-align: center; }
+
+/*# sourceMappingURL=history.css.map */
