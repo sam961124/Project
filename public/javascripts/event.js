@@ -83,7 +83,9 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                         if (data != null) {
                             $scope.answers = data.data.files;
                             $(".loader-box").css("display", "none");
-                            $(".output-container").addClass("animated fadeInRight");
+                            $(".output-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                                $(this).removeClass('animated fadeInRight')
+                            });
                             $(".output-container").css("display", "block");
                         }
                         //find out body part & symptom
@@ -136,13 +138,17 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
        .then(function(data) {
             console.log("get successfully");
             $scope.result = data.data;
-            $(".result-container").addClass("animated fadeInRight");
+            $(".result-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass('animated fadeInRight')
+            });
             $(".result-container").css("display", "block");
             $(".output-container").css("display", "none");
         })
     }
     $scope.goBack = function() {
-        $(".output-container").addClass("animated fadeInRight");
+        $(".output-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $(this).removeClass('animated fadeInRight')
+        });
         $(".output-container").css("display", "block");
         $(".result-container").css("display", "none");
     }
