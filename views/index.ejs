@@ -8,6 +8,7 @@
     <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="/components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"  />
     <link rel="stylesheet" href="/components/Swiper/dist/css/swiper.min.css">
     <link rel='stylesheet' href='/stylesheets/jquery.multiselect.css' />
@@ -24,6 +25,7 @@
     <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="/components/jquery.multiselect.js"></script>
     <script src="/components/wowjs/dist/wow.min.js"></script>
@@ -51,10 +53,22 @@
             pagination: '.swiper-pagination',
             paginationClickable: true
         });
-
-        $('.dropdown-menu').on('click', function(event){
+        //$('.body-select').multiselect();
+        $('.dropdown-menu').on('click', function(event) {
             event.stopPropagation();
         });
+
+        $('.selectpicker').selectpicker({
+            container: 'body'
+        });
+
+        $('body').on('click', function(event) {
+            var target = $(event.target);
+            if (target.parents('.bootstrap-select').length) {
+                event.stopPropagation();
+                $('.bootstrap-select.open').removeClass('open');
+            }
+        }); 
 
         </script>
     </div>
