@@ -69,7 +69,6 @@ project.controller("HttpPostController", function($scope, $http) {
                 },
                 headers: {
                     'Content-Type': 'application/json'
-
                 }
             })
             .then(function(data) {

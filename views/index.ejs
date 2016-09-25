@@ -19,7 +19,6 @@
     <link rel='stylesheet' href='/stylesheets/animate.css' />
     <link rel='stylesheet' href='/components/jquery-highlighttextarea/jquery.highlighttextarea.min.css' />
     <link rel='stylesheet' href='/components/angular-material/angular-material.css' />
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -34,7 +33,6 @@
     <script src="/components/angular-route/angular-route.min.js"></script>
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
     <script src="/javascripts/event.js"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
     <script>
         new WOW().init();
     </script>
@@ -65,6 +63,7 @@
             if ($(window).width() <= 767) {
                 $(".input-container").css("display", "none");
              }
+            $(".result-container").css("display", "none");
             $(".output-container").css("display", "none");
             $(".loader-box").css("display", "block");
         })
