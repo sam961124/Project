@@ -1,0 +1,17 @@
+{
+  "name": "Project",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Willy Kao <b02705006@ntu.edu.tw>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sam961124/Project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
