@@ -1,4 +1,4 @@
-var project = angular.module('project', ['ngRoute']);
+var project = angular.module('project', ['ngRoute', 'ngCookies']);
 var resData = "";
 
 
@@ -30,7 +30,7 @@ project.controller('outcomeFormController', function($element, $scope, $window) 
 
 });
 
-project.controller("HttpPostController", function($scope, $http) {
+project.controller("HttpPostController", function($scope, $http, $cookies) {
     var bd = [];
     var bd_index = 0;
     var sym = [];
@@ -38,7 +38,6 @@ project.controller("HttpPostController", function($scope, $http) {
     //user input
     $scope.detail = null;
     $scope.answers = [];
-
     //init data array & index
     $scope.Clear = function() {
         bd = [];
@@ -61,20 +60,20 @@ project.controller("HttpPostController", function($scope, $http) {
 
     $scope.SendData = function() {
         console.log($scope.detail);
+        console.log($cookies.get('_id'));
         $http({
                 method: 'POST',
                 url: 'http://four.ddns.net:3000',
                 data: {
+                    '_id': $cookies.get('_id'),
                     'data': $scope.detail
                 },
                 headers: {
                     'Content-Type': 'application/json'
-
                 }
             })
             .then(function(data) {
                     console.log("posted successfully");
-                    console.log(data.data);
                     $('textarea').highlightTextarea('destroy');
                     var bd = [];
                     var bd_index = 0;
