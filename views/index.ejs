@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"  />
     <link rel="stylesheet" href="/components/Swiper/dist/css/swiper.min.css">
+    <link rel='stylesheet' href='/stylesheets/jquery.multiselect.css' />
     <link rel='stylesheet' href='/stylesheets/global.css' />
     <link rel='stylesheet' href='/stylesheets/header.css' />
     <link rel='stylesheet' href='/stylesheets/input.css' />
@@ -19,12 +20,12 @@
     <link rel='stylesheet' href='/stylesheets/animate.css' />
     <link rel='stylesheet' href='/components/jquery-highlighttextarea/jquery.highlighttextarea.min.css' />
     <link rel='stylesheet' href='/components/angular-material/angular-material.css' />
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="/components/jquery.multiselect.js"></script>
     <script src="/components/wowjs/dist/wow.min.js"></script>
     <script src="/components/angular/angular.min.js"></script>
     <script src="/components/angular-animate/angular-animate.min.js"></script>
@@ -34,7 +35,6 @@
     <script src="/components/angular-route/angular-route.min.js"></script>
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
     <script src="/javascripts/event.js"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
     <script>
         new WOW().init();
     </script>
@@ -51,11 +51,20 @@
             pagination: '.swiper-pagination',
             paginationClickable: true
         });
+
+        $('.dropdown-menu').on('click', function(event){
+            event.stopPropagation();
+        });
+
         </script>
     </div>
     <%- include footer %>
     <script>
+    
+
+    
     $(function(){
+        
         $(".btn-start").click(function(){
             $(".init-container").css("display", "none");
             $(".swiper-container").css("display", "none");
@@ -68,6 +77,8 @@
             $(".output-container").css("display", "none");
             $(".loader-box").css("display", "block");
         })
+
+
         if ($(window).width() > 767)
         {
             $(".init-box-1").addClass("animated fadeInUp");
