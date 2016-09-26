@@ -1,4 +1,4 @@
-var project = angular.module('project', ['ngRoute', 'ngCookies']);
+var project = angular.module('project', ['ngRoute', 'ngCookies', 'isteven-multi-select']);
 var resData = "";
 
 
@@ -17,10 +17,37 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     var sym = [];
     var sym_index = 0;
     //user input
+    $scope.bodyTest = [
+        { bodypartName: "鼻子"},
+        { bodypartName: "大腿"},
+        { bodypartName: "耳朵"}
+    ];
+    $scope.bodySelectSetting = {
+        selectAll       : "選擇全部",
+        selectNone      : "全部不選",
+        reset           : "重新設定",
+        search          : "請輸入搜尋",
+        nothingSelected : "請選擇部位..."         //default-label is deprecated and replaced with this.
+    };
+    $scope.symptomTest = [
+        { symptomName: "青春痘"},
+        { symptomName: "毛囊炎"},
+        { symptomName: "病毒疣"}
+    ];
+    $scope.symptomSelectSetting = {
+        selectAll       : "選擇全部",
+        selectNone      : "全部不選",
+        reset           : "重新設定",
+        search          : "請輸入搜尋",
+        nothingSelected : "請選擇症狀..."         //default-label is deprecated and replaced with this.
+    };
+
     $scope.detail = null;
     $scope.answers = [];
     $scope.bodyparts = [];
+    $scope.bodyOutput = [];
     $scope.symptoms = [];
+    $scope.symptomOutput = [];
     //function to add to scope detail on click
     $scope.AddDetail = function(event) {
         $scope.detail = $(event.target).text();
@@ -87,6 +114,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                         $scope.bodyparts = bd;
                         $scope.symptoms = sym;
                         console.log(bd);
+                        console.log(typeof(bd.toString()));
                         console.log(sym);
                         if (bd.length == 0 && sym.length != 0) {
                             $('textarea').highlightTextarea({

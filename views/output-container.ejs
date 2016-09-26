@@ -11,6 +11,53 @@
                 <div class="dropdown dropdown-lg">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
+
+                        <button type="button" class="btn" id="body-button">部位</button>
+                        <div     
+                            isteven-multi-select
+                            input-model="bodyTest"
+                            output-model="bodyOutput"
+                            button-label="bodypartName"
+                            item-label="bodypartName"
+                            tick-property="ticked"
+                            helper-elements="all none"
+                            translation="bodySelectSetting"
+                            >
+                        </div>
+                        <button type="button" class="btn" id="symptom-button">症狀</button>
+                        <div     
+                            isteven-multi-select
+                            input-model="symptomTest"
+                            output-model="symptomOutput"
+                            button-label="symptomName"
+                            item-label="symptomName"
+                            tick-property="ticked"
+                            helper-elements="all none"  
+                            translation="symptomSelectSetting"
+                            >
+                        </div>
+                        <button type="submit" class="btn btn-primary " id="bottomSearchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+
+<!--
+                        <form class="form-horizontal" role="form">
+                          <div class="form-group">
+                            
+                          </div>
+                          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        </form>
+-->
+<!--
+                        <div     
+                            isteven-multi-select
+                            input-model="bodyTest"
+                            output-model="bodyOutput"
+                            button-label="bodypartName"
+                            item-label="bodypartName"
+                            tick-property="ticked"
+                        >
+                        </div>
+--
+                        <!--
                         <form class="form-horizontal" role="form">
                           <div class="form-group">
                             <label for="body">部位</label>
@@ -30,6 +77,8 @@
                           </div>
                           <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
                         </form>
+                        -->
+
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
