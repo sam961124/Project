@@ -39,7 +39,8 @@
     .output-container .input-group .dropdown.dropdown-lg {
       position: static !important; }
     .output-container .input-group .dropdown-menu button {
-      width: 100%; }
+      width: 100%;
+      border-radius: 0px; }
     .output-container .input-group #body-button, .output-container .input-group #symptom-button, .output-container .input-group #bottomSearchButton {
       width: 100%; }
     .output-container .input-group .show {
