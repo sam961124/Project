@@ -20,6 +20,7 @@
   .cd-horizontal-timeline .events-wrapper {
     position: relative;
     height: 100%;
+    width: 480px;
     margin: 0 40px;
     overflow: hidden; }
     .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
@@ -32,21 +33,21 @@
       width: 20px; }
     .cd-horizontal-timeline .events-wrapper::before {
       left: 0;
-      background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-      background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0)); }
+      background-image: -webkit-linear-gradient( left , #ffea95, rgba(248, 179, 150, 0));
+      background-image: linear-gradient(to right, #ffea95, rgba(248, 179, 150, 0)); }
     .cd-horizontal-timeline .events-wrapper::after {
       right: 0;
-      background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-      background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0)); }
+      background-image: -webkit-linear-gradient( right , #ffea95, rgba(248, 179, 150, 0));
+      background-image: linear-gradient(to left, #ffea95, rgba(248, 179, 150, 0)); }
   .cd-horizontal-timeline .events {
     /* this is the grey line/timeline */
     position: absolute;
     z-index: 1;
     left: 0;
     top: 49px;
-    height: 2px;
+    height: 7px;
     /* width will be set using JavaScript */
-    background: #dfdfdf;
+    background: #f59066;
     -webkit-transition: -webkit-transform 0.4s;
     -moz-transition: -moz-transform 0.4s;
     transition: transform 0.4s; }
@@ -58,7 +59,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background-color: #7b9d6f;
+    background-color: #7d0000;
     -webkit-transform: scaleX(0);
     -moz-transform: scaleX(0);
     -ms-transform: scaleX(0);
@@ -77,9 +78,9 @@
     bottom: 0;
     z-index: 2;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding-bottom: 15px;
-    color: #383838;
+    color: #0b3e65;
     /* fix bug on Safari - text flickering while timeline translates */
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
@@ -97,31 +98,25 @@
       -ms-transform: translateX(-50%);
       -o-transform: translateX(-50%);
       transform: translateX(-50%);
-      bottom: -5px;
-      height: 12px;
-      width: 12px;
+      bottom: -6px;
+      height: 20px;
+      width: 20px;
       border-radius: 50%;
-      border: 2px solid #dfdfdf;
-      background-color: #f8f8f8;
+      border: 2px solid #f59066;
+      background-color: #f8b396;
       -webkit-transition: background-color 0.3s, border-color 0.3s;
       -moz-transition: background-color 0.3s, border-color 0.3s;
       transition: background-color 0.3s, border-color 0.3s; }
     .no-touch .cd-horizontal-timeline .events a:hover::after {
-      background-color: #7b9d6f;
-      border-color: #7b9d6f; }
+      background-color: #7d0000;
+      border-color: #7d0000; }
     .cd-horizontal-timeline .events a.selected {
       pointer-events: none; }
       .cd-horizontal-timeline .events a.selected::after {
-        background-color: #7b9d6f;
-        border-color: #7b9d6f; }
+        background-color: #7d0000;
+        border-color: #7d0000; }
     .cd-horizontal-timeline .events a.older-event::after {
-      border-color: #7b9d6f; }
-  @media only screen and (min-width: 1100px) {
-    .cd-horizontal-timeline {
-      margin: 6em auto; }
-      .cd-horizontal-timeline::before {
-        /* never visible - this is used in jQuery to check the current MQ */
-        content: 'desktop'; } }
+      border-color: #7d0000; }
 
 .cd-timeline-navigation a {
   /* these are the left/right arrows to navigate the timeline */
@@ -137,7 +132,7 @@
   height: 34px;
   width: 34px;
   border-radius: 50%;
-  border: 2px solid #dfdfdf;
+  border: 2px solid #f59066;
   /* replace text with an icon */
   overflow: hidden;
   color: transparent;
@@ -161,7 +156,7 @@
     -ms-transform: translateX(-50%) translateY(-50%);
     -o-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(../img/cd-arrow.svg) no-repeat 0 0; }
+    background: url("/images/cd-arrow.svg") no-repeat 0 0; }
   .cd-timeline-navigation a.prev {
     left: 0;
     -webkit-transform: translateY(-50%) rotate(180deg);
@@ -172,23 +167,25 @@
   .cd-timeline-navigation a.next {
     right: 0; }
   .no-touch .cd-timeline-navigation a:hover {
-    border-color: #7b9d6f; }
+    border-color: #7d0000; }
   .cd-timeline-navigation a.inactive {
     cursor: not-allowed; }
     .cd-timeline-navigation a.inactive::after {
       background-position: 0 -16px; }
     .no-touch .cd-timeline-navigation a.inactive:hover {
-      border-color: #dfdfdf; }
+      border-color: #f59066; }
 
 .cd-horizontal-timeline .events-content {
   position: relative;
   width: 100%;
   margin: 2em 0;
-  overflow: hidden;
+  overflow: scroll;
+  height: 200px;
   -webkit-transition: height 0.4s;
   -moz-transition: height 0.4s;
   transition: height 0.4s; }
   .cd-horizontal-timeline .events-content li {
+    margin-left: -3%;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -212,6 +209,7 @@
       position: relative;
       z-index: 2;
       opacity: 1;
+      overflow: scroll;
       -webkit-transform: translateX(0);
       -moz-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -232,30 +230,6 @@
   .cd-horizontal-timeline .events-content li > * {
     max-width: 800px;
     margin: 0 auto; }
-  .cd-horizontal-timeline .events-content h2 {
-    font-weight: bold;
-    font-size: 2.6rem;
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    line-height: 1.2; }
-  .cd-horizontal-timeline .events-content em {
-    display: block;
-    font-style: italic;
-    margin: 10px auto; }
-    .cd-horizontal-timeline .events-content em::before {
-      content: '- '; }
-  .cd-horizontal-timeline .events-content p {
-    font-size: 1.4rem;
-    color: #959595; }
-  .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
-    line-height: 1.6; }
-  @media only screen and (min-width: 768px) {
-    .cd-horizontal-timeline .events-content h2 {
-      font-size: 7rem; }
-    .cd-horizontal-timeline .events-content em {
-      font-size: 2rem; }
-    .cd-horizontal-timeline .events-content p {
-      font-size: 1.8rem; } }
 
 @-webkit-keyframes cd-enter-right {
   0% {

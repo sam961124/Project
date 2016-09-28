@@ -1,4 +1,4 @@
-var project = angular.module('project', ['ngRoute', 'ngCookies']);
+var project = angular.module('project', ['ngRoute', 'ngCookies', 'angular.filter']);
 var resData = "";
 
 
@@ -135,6 +135,17 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     $scope.toggle = function() {
         $scope.hideFilter = !$scope.hideFilter;
     }
+
+    //history
+    $scope.hisrecords = [{title: "鼻子上長一粒一粒的紅疹，會有點癢但是不會痛", time: "22:10", date: "1/7/2016", date_n: "Jul 1", init: true},
+    {title: "腳上大拇指頂端紅腫脫皮，不知道是不是鞋子的關係，有時候又很癢，是香港腳嗎？", time: "21:12", date: "20/8/2016", date_n: "Aug 20", init: false},
+    {title: "臉常常乾燥脫皮，但鼻子卻又很油", time: "19:16", date: "8/9/2016", date_n: "Sep 8", init: false},
+    {title: "運動完後發現大腿後面有一處紅腫，會很癢但是不會痛，是蕁麻疹嗎？", time: "09:33", date: "25/9/2016", date_n: "Sep 25", init: false},
+    {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "22:10", date: "5/10/2016", date_n: "Oct 5", init: false},
+    {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "23:30", date: "5/10/2016", date_n: "Oct 5", init: false},
+    {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "23:45", date: "5/10/2016", date_n: "Oct 5", init: false}
+    ];
+    console.log($scope.hisrecords[1].date);
 });
 
 //control the pagination

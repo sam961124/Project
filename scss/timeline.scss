@@ -34,6 +34,7 @@
 	.events-wrapper {
 		position: relative;
 		height: 100%;
+		width: 480px;
 		margin: 0 40px;
 		overflow: hidden;
 
@@ -49,12 +50,12 @@
 
 		&::before {
 			left: 0;
-	    	@include background-image(linear-gradient(to right,$color-4, rgba($color-4, 0)));
+	    	@include background-image(linear-gradient(to right,#ffea95, rgba($color-4, 0)));
 		}
 
 		&::after {
 			right: 0;
-			@include background-image(linear-gradient(to left,$color-4, rgba($color-4, 0)));
+			@include background-image(linear-gradient(to left,#ffea95, rgba($color-4, 0)));
 		}
 	}
 
@@ -64,7 +65,7 @@
 		z-index: 1;
 		left: 0;
 		top: 49px;
-		height: 2px;
+		height: 7px;
 		/* width will be set using JavaScript */
 		background: darken($color-4, 10%);
 		@include transition(transform .4s);
@@ -89,7 +90,7 @@
 		bottom: 0;
 		z-index: 2;
 		text-align: center;
-		font-size: 1.3rem;
+		font-size: 1.5rem;
 		padding-bottom: 15px;
 		color: $color-1;
 		/* fix bug on Safari - text flickering while timeline translates */
@@ -100,9 +101,9 @@
 			content: '';
 			position: absolute;
 			@include center(x);
-			bottom: -5px;
-			height: 12px;
-			width: 12px;
+			bottom: -6px;
+			height: 20px;
+			width: 20px;
 			border-radius: 50%;
 			border: 2px solid darken($color-4, 10%);
 			background-color: $color-4;
@@ -125,15 +126,6 @@
 
 		&.older-event::after {
 			border-color: $color-2;
-		}
-	}
-
-	@include MQ(L) {
-		margin: 6em auto;
-
-		&::before {
-			/* never visible - this is used in jQuery to check the current MQ */
-			content: 'desktop';
 		}
 	}
 }
@@ -161,7 +153,7 @@
 		height: 16px;
 		width: 16px;
 		@include center;
-		background: url(../img/cd-arrow.svg) no-repeat 0 0;
+		background: url("/images/cd-arrow.svg") no-repeat 0 0;
 	}
 
 	&.prev {
@@ -194,10 +186,12 @@
 	position: relative;
 	width: 100%;
 	margin: 2em 0;
-	overflow: hidden;
+	overflow: scroll;
+	height: 200px;
 	@include transition(height .4s);
 
 	li {
+		margin-left: -3%;
 		position: absolute;
 		z-index: 1;
 		width: 100%;
@@ -214,6 +208,7 @@
 			position: relative;
 			z-index: 2;
 			opacity: 1;
+			overflow: scroll;
 			@include transform(translateX(0));
 		}
 
@@ -233,48 +228,6 @@
 	li > * {
 		max-width: 800px;
 		margin: 0 auto;
-	}
-
-	h2 {
-		font-weight: bold;
-		font-size: 2.6rem;
-		font-family: $secondary-font;
-		font-weight: 700;
-		line-height: 1.2;
-	}
-
-	em {
-		display: block;
-		font-style: italic;
-		margin: 10px auto;
-
-		&::before {
-			content: '- ';
-		}
-	}
-
-	p {
-		font-size: 1.4rem;
-		color: shade($color-4, 40%);
-	}
-
-	em, p {
-		line-height: 1.6;
-	}
-
-	@include MQ(M) {
-
-		h2 {
-			font-size: 7rem;
-		}
-
-		em {
-			font-size: 2rem;
-		}
-
-		p {
-			font-size: 1.8rem;
-		}
 	}
 
 }
