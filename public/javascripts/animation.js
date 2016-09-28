@@ -1,6 +1,6 @@
 //map & history click event
 $(function(){
-    $(".map, .history, .about").click(function(){
+    $(".header-map, .header-history, .header-about").click(function(){
         $(".init-container").addClass("animated fadeOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
