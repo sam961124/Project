@@ -5,17 +5,17 @@
         </div>
     </div>
     <div class="input-group">
-        <input type="text" class="form-control" placeholder="請輸入關鍵字或從選單選擇..." />
+        <input type="text" class="form-control" id="filter-search-box" placeholder="請輸入關鍵字或從選單選擇..." />
         <div class="input-group-btn">
             <div class="btn-group" role="group">
                 <div class="dropdown dropdown-lg">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                    <button type="button" class="btn btn-default dropdown-toggle" id="filter-dropdown" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
                     <div class="dropdown-menu dropdown-menu-right" role="menu">
 
                         <button type="button" class="btn" id="body-button"><i class="fa fa-heartbeat fa-lg" aria-hidden="true"></i>&nbsp;部位</button>
                         <div     
                             isteven-multi-select
-                            input-model="bodyTest"
+                            input-model="bodyparts"
                             output-model="bodyOutput"
                             button-label="bodypartName"
                             item-label="bodypartName"
@@ -27,7 +27,7 @@
                         <button type="button" class="btn" id="symptom-button"><i class="fa fa-stethoscope fa-lg" aria-hidden="true"></i>&nbsp;症狀</button>
                         <div     
                             isteven-multi-select
-                            input-model="symptomTest"
+                            input-model="symptoms"
                             output-model="symptomOutput"
                             button-label="symptomName"
                             item-label="symptomName"
@@ -36,52 +36,11 @@
                             translation="symptomSelectSetting"
                             >
                         </div>
-                        <button type="submit" class="btn btn-primary " id="bottomSearchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-
-<!--
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            
-                          </div>
-                          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </form>
--->
-<!--
-                        <div     
-                            isteven-multi-select
-                            input-model="bodyTest"
-                            output-model="bodyOutput"
-                            button-label="bodypartName"
-                            item-label="bodypartName"
-                            tick-property="ticked"
-                        >
-                        </div>
---
-                        <!--
-                        <form class="form-horizontal" role="form">
-                          <div class="form-group">
-                            <label for="body">部位</label>
-                            <select class="form-control body-select" multiple="multiple">
-                                <option ng-value="bodypart"
-                                        ng-repeat="bodypart in bodyparts"> {{bodypart}}
-                                </option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="symptom">症狀</label>
-                            <select class="form-control symptom-select">
-                                <option ng-value="symptom"
-                                        ng-repeat="symptom in symptoms"> {{symptom}}
-                                </option>
-                            </select>
-                          </div>
-                          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                        </form>
-                        -->
+                        <button type="submit" class="btn btn-primary " id="bottom-search-button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                <button type="button" class="btn btn-primary" id="filter-search-button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </div>
         </div>
     </div>
