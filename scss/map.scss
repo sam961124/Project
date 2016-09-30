@@ -17,6 +17,7 @@
       height:440px;
     }
     .modal-content {
+        width:400px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
         border: 1px solid rgba(0, 0, 0, .2);
         background-clip: padding-box;
@@ -31,9 +32,13 @@
         outline: 0;
         -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
         box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+        p{
+          letter-spacing: 0.5px;
+          color: black;
+        }
     }
     .modal-title {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 18px;
         font-weight: 400;
         padding: 0;
@@ -61,7 +66,6 @@
         padding: 0;
         text-align: right;
         border-top: 1px solid #dadada;
-        //display: table;
         display: block;
         width: 100%;
     }
@@ -70,7 +74,7 @@
     }
     .modal-footer .btn {
         display: table-cell;
-        //width: 50%;
+        width: 200px;
         text-align: center;
         padding: 12px 0;
         border-right: 1px solid #dadada;
@@ -79,12 +83,6 @@
         border-radius: 0;
         font-weight: 700;
     }
-    .modal-footer .btn:first-child {
-        width: 60%;
-    }
-    .modal-footer .btn:last-child {
-        width: 40%;
-    }
     .modal-footer .lightblue:hover {
         color: #fff;
     }
@@ -92,7 +90,6 @@
         background: #41cace;
         color: #fff;
     }
-
     #modal-wrap {
       -moz-box-sizing: border-box;
         position: absolute  ;
@@ -104,12 +101,13 @@
         overflow: hidden;
         padding-bottom: 30px;
         -webkit-overflow-scrolling: touch;
-        width: 100%;
+        width:100%;
         min-width: 300px;
         max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        display: table;
+        margin:auto;
+        //margin-left: auto;
+        //margin-right: auto;
+        display: block;
     }
 
     .modal-header .close {
@@ -189,7 +187,6 @@
         font-size: 14px;
         text-align: left;
     }
-    .switch-button-button {}
     #modal-pointer {
         left: calc(50% - 9px);
         border-top-width: 24px;

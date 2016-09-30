@@ -5,8 +5,6 @@ function initMap() {
     //map options
     var location;
     //user Icon settings
-    //var iconSize = new google.maps.Size(29, 39);
-    //var iconAnchor = new google.maps.Point(14.5, 37);
     geocoder = new google.maps.Geocoder();
     var myOptions = {
         zoom: 16,
@@ -28,15 +26,8 @@ function initMap() {
 }
 //add User location marker
 function addMarker(location) {
-    var userIcon = {
-        url: '/images/user_location.png',
-        size: new google.maps.Size(32, 32),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(0, 32)
-    };
     var marker = new google.maps.Marker({
         position: location,
-        icon: userIcon,
         title: "You are here!",
         map: map
     });

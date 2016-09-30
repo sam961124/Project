@@ -2,8 +2,14 @@ var markersArray = [];
 var json_path = {
     hospital: "/json/hospital.json"
 }
-//pan to offset
-
+var iconSize = new google.maps.Size(40, 40);
+var iconAnchor = new google.maps.Point(14.5, 37);
+var hospital = {
+  url : '/images/hospital_icon.png',
+  scaledSize: iconSize,
+  origin: new google.maps.Point(0, 0),
+  anchor:iconAnchor
+};
 if (!String.format) {
   String.format = function(format) {
     var args = Array.prototype.slice.call(arguments, 1);
@@ -30,13 +36,11 @@ var modal = {
         $('#modal-wrap').find('.exdetail').prop('innerHTML', modal_exdetail)
     },
     center: function(){
-      var modalHeight = $('#modal-wrap').height();
-      console.log(modalHeight);
+      var modalHeight = $('.modal-dialog').height();
       var windowHeight = $('.map-container').height();
-      console.log(windowHeight);
-      var topBotMargin = (windowHeight - (modalHeight + 30))/2;
-      $('#modal-wrap').css('margin-top',topBotMargin);
-      $('#modal-wrap').css('margin-bottom',topBotMargin);
+      var topBotMargin = (windowHeight - (modalHeight + 60))/2;
+      $('#modal-wrap').css('padding-top',topBotMargin);
+      $('#modal-wrap').css('padding-bottom',topBotMargin);
     }
 }
 //pan to Marker position
@@ -59,7 +63,7 @@ function addMarkerWithInfo(myLatlng,info){
   var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      //icon: icon,
+      icon: hospital,
       title: info.title
   });
   //event listener
@@ -75,12 +79,12 @@ function showHospital() {
         function(json) {
             for (var i in json) {
                 var info = {};
-                info.title = "醫院名稱：" + json[i].org_name;
+                info.title = json[i].org_name;
                 info.exdetail = [{
-                   name: "地址:",
+                   name: "地址 : ",
                    value: json[i].addr
                 },{
-                  name: "聯絡電話:",
+                  name: "聯絡電話 : ",
                   value: json[i].contact_phone
                 }];
                 var myLatlng = new google.maps.LatLng(json[i].lat, json[i].lng);
@@ -105,11 +109,15 @@ function showModal(info, markerPosition) {
     modal.center();
     var modalHeight = $('.modal-app-msg').height();
     console.log(modalHeight);
-    map.panToWithOffset(markerPosition, -1, modalHeight * -1 / 2 - 35);
-
+    map.panToWithOffset(markerPosition, 5 , modalHeight * -1 / 2 - 30);
     $('#modal-pointer').css('opacity', 0);
     $('#modal-pointer').removeClass('hidden');
     $('#modal-pointer').animate({
         opacity: 1
     }, 300);
 }
+
+//close-modal
+$('#modal-btn-close').click(function(){
+  $('#modal-wrap').addClass('hidden');
+});
