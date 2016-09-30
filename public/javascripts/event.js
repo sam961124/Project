@@ -44,7 +44,6 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
 
     $scope.SendData = function() {
         console.log($scope.detail);
-        console.log($cookies.get('_id'));
         $http({
                 method: 'POST',
                 url: 'http://four.ddns.net:3000',
@@ -145,7 +144,6 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "23:30", date: "5/10/2016", date_n: "Oct 5", init: false},
     {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "23:45", date: "5/10/2016", date_n: "Oct 5", init: false}
     ];
-    console.log($scope.hisrecords[1].date);
 });
 
 //control the pagination
