@@ -1,6 +1,6 @@
 //map & history click event
 $(function(){
-    $(".map, .history, .about").click(function(){
+    $(".header-map, .header-history, .header-about").click(function(){
         $(".init-container").addClass("animated fadeOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass('animated fadeOut');
             $(this).css("display", "none");
@@ -23,16 +23,20 @@ $(function(){
         });
     });
 
-    $(".map").click(function(){
+    $(".header-map").click(function(ev){
+        ev.preventDefault();
         $(".history-container").css("display", "none");
         setTimeout(function(){
             $(".map-container").addClass("animated fadeInDown").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
                 $(this).removeClass('animated fadeInDown');
             });
             $(".map-container").css("display", "block");
+            initMap();
         }, 1000);
     });
-    $(".history").click(function(){
+
+    $(".header-history").click(function(ev){
+        ev.preventDefault();
         $(".map-container").css("display", "none");
         setTimeout(function(){
             $(".history-container").addClass("animated fadeInUp").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -41,7 +45,6 @@ $(function(){
             $(".history-container").css("display", "block");
         }, 1000);
     });
-
 });
 
 

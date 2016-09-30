@@ -19,6 +19,7 @@
     <link rel='stylesheet' href='/stylesheets/output.css' />
     <link rel='stylesheet' href='/stylesheets/map.css' />
     <link rel='stylesheet' href='/stylesheets/history.css' />
+    <link rel='stylesheet' href='/stylesheets/timeline.css' />
     <link rel='stylesheet' href='/stylesheets/animate.css' />
     <link rel='stylesheet' href='/components/jquery-highlighttextarea/jquery.highlighttextarea.min.css' />
     <link rel='stylesheet' href='/components/angular-material/angular-material.css' />
@@ -33,13 +34,19 @@
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
     <script src="/components/isteven-multi-select/isteven-multi-select.js"></script>
     <script src="/components/jquery/dist/jquery.min.js"></script>
+    <script src="javascripts/timeline/modernizr.js"></script>
     <script src="/javascripts/event.js"></script>
+    <script src="javascripts/animation.js"></script>
     <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+    <script src="https://use.fontawesome.com/cb4d544cb1.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
-
+    <script src="/javascripts/initAutoComplete.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNY4wWrUxnjB-qfbYAdM6ISVfIdbMjStI&libraries=places"></script>
+    <script src="/javascripts/addHospital.js"></script>
   </head>
   <body>
     <%- include header %>
@@ -47,8 +54,8 @@
         <%- include init-container %>
         <%- include input-container %>
         <%- include output-container %>
-        <%- include map-container %>
         <%- include history-container %>
+        <%- include map-container %>
         <script>
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
@@ -56,9 +63,11 @@
         });
 
         </script>
-        <script src="javascripts/animation.js"></script>
+        <script src="javascripts/timeline/jquery.mobile.custom.min.js"></script>
+        <script src="javascripts/timeline/main.js"></script>
     </div>
     <%- include footer %>
+    
     <script>
     
 
