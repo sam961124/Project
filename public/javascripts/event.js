@@ -39,6 +39,15 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     $scope.bodyOutput = [];
     $scope.symptoms = [];
     $scope.symptomOutput = [];
+
+    //pagination
+    $scope.currentPage = 0;
+    $scope.pageSize = 6;
+    $scope.data = [];
+    $scope.numberOfPages = function(){
+        return Math.ceil($scope.answers.length/$scope.pageSize);
+    };
+    
     //function to add to scope detail on click
     $scope.AddDetail = function(event) {
         $scope.detail = $(event.target).text();
@@ -53,15 +62,95 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
         sym_index = 0;
         $scope.currentPage = 0;
     };
+    //print selected output to console when bottom search button clicked
+    $scope.PrintOutput = function() {
+        for(i = 0; i < $scope.bodyOutput.length; i++){
+            console.log($scope.bodyOutput[i]);
+        }
+        for(i = 0; i < $scope.symptomOutput.length; i++){
+            console.log($scope.symptomOutput[i]);
+        }
+    };
+    //function to reset detail via the filter
+    $scope.ResetDetail = function() {
+        $scope.detail = "";
+        for(i = 0; i < $scope.bodyOutput.length; i++){
+            $scope.detail += $scope.bodyOutput[i].bodypartName;
+            //console.log($scope.detail);
+        }
+        for(i = 0; i < $scope.symptomOutput.length; i++){
+            $scope.detail += $scope.symptomOutput[i].symptomName;
+            //console.log($scope.detail);
+        }
+    };
 
+    //$scope.ClearInputText = function() {
+    //    $('textarea').val('');
+    //};
 
-    //pagination
-    $scope.currentPage = 0;
-    $scope.pageSize = 6;
-    $scope.data = [];
-    $scope.numberOfPages = function(){
-        return Math.ceil($scope.answers.length/$scope.pageSize);
-    }
+    //update result according to filter 
+    $scope.UpdateResult = function() {
+        $http({
+                method: 'POST',
+                url: 'http://four.ddns.net:3000',
+                data: {
+                    '_id': $cookies.get('_id'),
+                    'data': $scope.detail
+                },
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(function(data) {
+                    console.log("posted successfully");
+                    $(function() {
+                        if (data != null) {
+                            $scope.answers = data.data.files;
+                            $(".loader-box").css("display", "none");
+                            $(".output-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                                $(this).removeClass('animated fadeInRight')
+                            });
+                            $(".output-container").css("display", "block");
+                        }
+                        //clear bodyparts and symptoms
+                        $scope.bodyparts.length = 0;
+                        $scope.symptoms.length = 0;
+
+                        //find out body part & symptom
+                        for (i = 0; i < data.data.bd_tag.length; i++) {
+                            if (data.data.bd_tag[i].charAt(0) == "B") {
+                                bd[bd_index] = data.data.raw[i];
+                                bd_index++;
+                            }
+                            if (data.data.sym_tag[i].charAt(0) == "B") {
+                                sym[sym_index] = data.data.raw[i];
+                                sym_index++;
+                            }
+                        }
+                        // add bd to bodyparts
+                        for (i = 0; i < bd.length; i++) {
+                            $scope.bodyparts[i].bodypartName = bd[i];
+                            //console.log($scope.bodyOutput);
+                        }
+                        for (i = 0; i < sym.length; i++) {
+                            $scope.symptoms[i] = {};
+                            $scope.symptomOutput[i] = {};
+                            $scope.symptoms[i].symptomName = sym[i];
+                            //console.log($scope.symptomOutput);
+                        }
+
+                        //$scope.bodyparts = bd;
+                        //$scope.symptoms = sym;
+                        console.log(bd);
+                        console.log(sym);
+                        
+                    });
+                },
+                function(data) {
+                    console.error("error in posting");
+                });
+    };
+
 
     //post to server
 
@@ -101,15 +190,18 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                                 sym_index++;
                             }
                         }
-                        //$scope.bodyTest[0].bodypartName = '膝蓋';
-                        //$scope.bodyTest[0].bodypartName = '脖子';
+                        // add bd to bodyparts
                         for (i = 0; i < bd.length; i++) {
                             $scope.bodyparts[i] = {};
+                            $scope.bodyOutput[i] = {};
                             $scope.bodyparts[i].bodypartName = bd[i];
+                            //console.log($scope.bodyOutput);
                         }
                         for (i = 0; i < sym.length; i++) {
                             $scope.symptoms[i] = {};
+                            $scope.symptomOutput[i] = {};
                             $scope.symptoms[i].symptomName = sym[i];
+                            //console.log($scope.symptomOutput);
                         }
 
                         //$scope.bodyparts = bd;

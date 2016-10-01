@@ -668,6 +668,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                         angular.element( element ).children()[ 0 ].blur();
                     }
                     // if there's no filter then just focus on the first checkbox item
+                    /*
                     else {                  
                         if ( !$scope.isDisabled ) {                        
                             $scope.tabIndex = $scope.tabIndex + helperItemsLength;
@@ -679,7 +680,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                             }                            
                         }
                     }                          
-
+                    */
                     // open callback
                     $scope.onOpen();
                 }                            

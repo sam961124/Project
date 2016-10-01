@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="input-group">
-        <input type="text" class="form-control" id="filter-search-button" placeholder="請輸入關鍵字或從選單選擇..." />
+        <input type="text" class="form-control" id="filter-search-box" placeholder="請輸入關鍵字或從選單選擇..." />
         <div class="input-group-btn">
             <div class="btn-group" role="group">
                 <div class="dropdown dropdown-lg">
@@ -22,6 +22,7 @@
                             tick-property="ticked"
                             helper-elements="all none"
                             translation="bodySelectSetting"
+                            output-properties="bodypartName"
                             >
                         </div>
                         <button type="button" class="btn" id="symptom-button"><i class="fa fa-stethoscope fa-lg" aria-hidden="true"></i>&nbsp;症狀</button>
@@ -34,9 +35,10 @@
                             tick-property="ticked"
                             helper-elements="all none"  
                             translation="symptomSelectSetting"
+                            output-properties="symptomName"
                             >
                         </div>
-                        <button type="submit" class="btn btn-primary " id="bottom-search-button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                        <button type="submit" class="btn btn-primary " id="bottom-search-button" ng-click="Clear(); ResetDetail(); SendData()"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
 
                     </div>
                 </div>
