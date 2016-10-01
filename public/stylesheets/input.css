@@ -20,15 +20,12 @@
   .input-container .hot-topic {
     height: 100px;
     padding: 0px 40px; }
-    .input-container .hot-topic .hot, .input-container .hot-topic .hot-topic-one, .input-container .hot-topic .hot-topic-two, .input-container .hot-topic .hot-topic-three, .input-container .hot-topic .hot-topic-four, .input-container .hot-topic .hot-topic-five {
+    .input-container .hot-topic .hot-topic-one, .input-container .hot-topic .hot-topic-two, .input-container .hot-topic .hot-topic-three, .input-container .hot-topic .hot-topic-four, .input-container .hot-topic .hot-topic-five, .input-container .hot-topic .hot-topic-six {
       float: left;
-      width: 33.3%;
+      width: 33.33%;
       height: 50%;
       border: 1px solid;
       border-color: transparent; }
-    .input-container .hot-topic img {
-      max-width: 100%;
-      max-height: 100%; }
     .input-container .hot-topic .btn {
       padding: 12px;
       font-size: 16px;

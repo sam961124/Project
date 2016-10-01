@@ -10,9 +10,11 @@
             </script>
         </div>
         <div class="hot-topic">
+            <!--
             <div class="hot">
-                <img src="images/hot.png"></img>
+                <img src="images/most-popular.png"></img>
             </div>
+            -->
             <div class="hot-topic-one">
                 <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">青春痘</button>
             </div>
@@ -28,10 +30,13 @@
             <div class="hot-topic-five">
                 <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">病毒疣</button>
             </div>
+            <div class="hot-topic-six">
+                <button type="button" class="btn btn-link" ng-click="Clear(); AddDetail($event); SendData()">濕疹</button>
+            </div>
 
         </div>
         <button type="button" class="btn btn-submit" 
-            ng-click=" Clear(); SendData(); HighlightInput()">送出
+            ng-click=" Clear(); SendData()">送出
         </button>    
     </form>
 </div>

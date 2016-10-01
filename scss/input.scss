@@ -27,17 +27,14 @@
     .hot-topic {
         height: 100px;
         padding: 0px 40px;
-        .hot, .hot-topic-one, .hot-topic-two, .hot-topic-three, .hot-topic-four, .hot-topic-five{
+        .hot-topic-one, .hot-topic-two, .hot-topic-three, .hot-topic-four, .hot-topic-five, .hot-topic-six{
             float: left;
-            width: 33.3%;
+            width: 33.33%;
             height: 50%;
             border: 1px solid;
             border-color: transparent;
         }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-        }
+
         .btn {
             padding: 12px;
             font-size: 16px;
