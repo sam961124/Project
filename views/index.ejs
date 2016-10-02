@@ -30,9 +30,9 @@
     <script src="/components/angular-material/angular-material.min.js"></script>
     <script src="/components/angular-messages/angular-messages.min.js"></script>
     <script src="/components/angular-route/angular-route.min.js"></script>
-    
+
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
-    
+
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="javascripts/timeline/modernizr.js"></script>
     <script src="/javascripts/event.js"></script>
@@ -68,69 +68,5 @@
         <script src="javascripts/timeline/main.js"></script>
     </div>
     <%- include footer %>
-    
-    <script>
-    
-
-    
-    $(function(){
-        
-        $('.body-select').multiselect();
-
-        $('.dropdown-menu').on('click', function(event) {
-            event.stopPropagation();
-        });
-
-        
-        $("#filter-dropdown").click(function(){
-            if ($(".dropdown").hasClass('open')) 
-                {$("#filter-search-button").css("border-bottom-right-radius", "4px");
-                $("#filter-search-box").css("border-bottom-left-radius", "4px");} 
-            else {
-                $("#filter-search-button").css("border-bottom-right-radius", "0px");
-                $("#filter-search-box").css("border-bottom-left-radius", "0px");
-            };
-            
-        })
-
-        $(".btn-start").click(function(){
-            $(".init-container").css("display", "none");
-            $(".swiper-container").css("display", "none");
-            $(".input-container").css("display", "block");
-        })
-        $(".btn-submit").click(function(){
-            if ($(window).width() <= 767) {
-                $(".input-container").css("display", "none");
-             }
-            $(".result-container").css("display", "none");
-            $(".output-container").css("display", "none");
-            $(".loader-box").css("display", "block");
-        })
-
-
-        if ($(window).width() > 767)
-        {
-            $(".init-box-1").addClass("animated fadeInUp");
-            $(".init-box-1").css("display", "block");
-            setTimeout(function(){
-                $(".init-box-2").addClass("animated fadeInUp");
-                $(".init-box-2").css("display", "block");
-            }, 400);
-            setTimeout(function(){
-                $(".init-box-3").addClass("animated fadeInUp");
-                $(".init-box-3").css("display", "block");
-            }, 800);
-            setTimeout(function(){
-                $(".btn-start").addClass("animated fadeInUp");
-                $(".btn-start").css("display", "inline-block");
-            }, 1200);
-        }
-        //test
-        //$(".btn-warning").click(function(){
-
-            //})
-        });
-    </script>
-
   </body>
 </html>

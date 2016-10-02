@@ -1,16 +1,6 @@
 var project = angular.module('project', ['ngRoute', 'ngCookies', 'isteven-multi-select', 'angular.filter']);
 var resData = "";
 
-
-/*$(document).ready(function () {
-    //initialize swiper when document ready
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true
-    })
-});*/
-
 project.controller("HttpPostController", function($scope, $http, $cookies) {
     var bd = [];
     var bd_index = 0;
@@ -32,7 +22,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
         search          : "請輸入搜尋",
         nothingSelected : "請選擇症狀..."         //default-label is deprecated and replaced with this.
     };
- 
+
     $scope.detail = null;
     $scope.answers = [];
     $scope.bodyparts = [];
@@ -42,12 +32,12 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
 
     //pagination
     $scope.currentPage = 0;
-    $scope.pageSize = 6;
+    $scope.pageSize = 4;
     $scope.data = [];
     $scope.numberOfPages = function(){
         return Math.ceil($scope.answers.length/$scope.pageSize);
     };
-    
+
     //function to add to scope detail on click
     $scope.AddDetail = function(event) {
         $scope.detail = $(event.target).text();
@@ -91,7 +81,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
     $scope.ConsoleLog = function() {
         console.log($scope.bodyparts);
         console.log($scope.symptoms);
-        
+
     }
 
     //post to server
@@ -179,20 +169,23 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                 });
     };
     $scope.getResult = function(id){
-        $http({
-           method: 'GET',
-           url: 'http://four.ddns.net:3000/doc/'+id,
-           headers: {'Content-Type': 'application/json'}
-       })
-       .then(function(data) {
-            console.log("get successfully");
-            $scope.result = data.data;
-            $(".result-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $(this).removeClass('animated fadeInRight')
-            });
-            $(".result-container").css("display", "block");
-            $(".output-container").css("display", "none");
-        })
+      if($("."+id).css("display") == "block")
+      {
+          $("."+id).css("display", "none");
+      }
+      else
+      {
+          $(".output-detail-receive").css("display", "none");
+          $http({
+             method: 'GET',
+             url: 'http://four.ddns.net:3000/doc/'+id,
+             headers: {'Content-Type': 'application/json'}
+          })
+          .then(function(data) {
+              $("."+id).css("display", "block");
+              $scope.result = data.data;
+          })
+      }
     }
     $scope.goBack = function() {
         $(".output-container").addClass("animated fadeInRight").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){

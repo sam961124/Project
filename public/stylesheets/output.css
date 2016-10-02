@@ -16,7 +16,6 @@
   .output-container .input-group {
     margin: 10px auto; }
     .output-container .input-group .dropdown.dropdown-lg .dropdown-menu {
-      min-width: 620px;
       margin-top: -1px;
       padding: 0px; }
     .output-container .input-group .input-group-btn .btn-group {
