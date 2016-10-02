@@ -38,7 +38,7 @@ var modal = {
     center: function(){
       var modalHeight = $('.modal-dialog').height();
       var windowHeight = $('.map-container').height();
-      var topBotMargin = (windowHeight - (modalHeight + 60))/2;
+      var topBotMargin = (windowHeight - (modalHeight + 30))/2;
       $('#modal-wrap').css('padding-top',topBotMargin);
       $('#modal-wrap').css('padding-bottom',topBotMargin);
     }
@@ -119,5 +119,9 @@ function showModal(info, markerPosition) {
 
 //close-modal
 $('#modal-btn-close').click(function(){
+  $('#modal-wrap').addClass('hidden');
+});
+//modal footer
+$('#modal-dismiss').click(function(){
   $('#modal-wrap').addClass('hidden');
 });
