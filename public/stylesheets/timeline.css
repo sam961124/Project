@@ -20,7 +20,6 @@
   .cd-horizontal-timeline .events-wrapper {
     position: relative;
     height: 100%;
-    width: 480px;
     margin: 0 40px;
     overflow: hidden; }
     .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
