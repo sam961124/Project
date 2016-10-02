@@ -3,11 +3,12 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var session = require('express-session')
+var session = require('express-session');
 var MongoDBStore = require('connect-mongodb-session')(session);
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var sassMiddleware = require('node-sass-middleware');
 
 var app = express();
 var store = new MongoDBStore({
@@ -20,7 +21,15 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
+//sass
+app.use(
+    sassMiddleware({
+        src: __dirname + '/scss',
+        dest: __dirname + '/public/stylesheets',
+        prefix: '/stylesheets',
+        debug: true,
+    })
+);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

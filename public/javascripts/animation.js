@@ -31,6 +31,7 @@ $(function(){
                 $(this).removeClass('animated fadeInDown');
             });
             $(".map-container").css("display", "block");
+            initMap();
         }, 1000);
     });
 

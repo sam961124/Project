@@ -18,26 +18,38 @@
     .output-container .input-group .dropdown.dropdown-lg .dropdown-menu {
       min-width: 620px;
       margin-top: -1px;
-      padding: 6px 20px; }
+      padding: 0px; }
     .output-container .input-group .input-group-btn .btn-group {
       display: flex !important; }
     .output-container .input-group .btn-group .btn {
       border-radius: 0;
-      margin-left: -1px; }
-    .output-container .input-group .btn-group .btn:last-child {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px; }
-    .output-container .input-group .btn-group .form-horizontal .btn[type="submit"] {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
+      margin-left: 0px; }
     .output-container .input-group .form-horizontal .form-group {
       margin-left: 0;
       margin-right: 0; }
-    .output-container .input-group .form-group .form-control:last-child {
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px; }
     .output-container .input-group .dropdown.dropdown-lg {
       position: static !important; }
+    .output-container .input-group .dropdown-menu button {
+      width: 100%;
+      border-radius: 0px; }
+    .output-container .input-group #filter-search-button {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
+    .output-container .input-group #bottom-search-button {
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px; }
+    .output-container .input-group #body-button, .output-container .input-group #symptom-button, .output-container .input-group #bottom-search-button {
+      width: 100%; }
+    .output-container .input-group .show {
+      width: 100%; }
+      .output-container .input-group .show button {
+        width: 50%; }
+    .output-container .input-group .multiSelect .checkBoxContainer {
+      padding: 0px;
+      width: 100%; }
+    .output-container .input-group #body-button, .output-container .input-group #symptom-button {
+      color: #FFF;
+      background-color: #a2a29a; }
   .output-container .output-outcome {
     height: 300px;
     text-align: left;

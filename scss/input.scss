@@ -1,6 +1,6 @@
 .input-container {
     display: none;
-    min-height: 500px;
+    height: 500px;
     background-color: #ffea95;
     border-radius: 20px;
     margin-top: 50px;
@@ -21,7 +21,25 @@
     .input-detail {
         text-align: left;
         font-size: 20px;
-        padding: 20px 40px;
+        padding: 10px 40px;
+    }
+
+    .hot-topic {
+        height: 100px;
+        padding: 0px 40px;
+        .hot-topic-one, .hot-topic-two, .hot-topic-three, .hot-topic-four, .hot-topic-five, .hot-topic-six{
+            float: left;
+            width: 33.33%;
+            height: 50%;
+            border: 1px solid;
+            border-color: transparent;
+        }
+
+        .btn {
+            padding: 12px;
+            font-size: 16px;
+            color: #FF7800;
+        }
     }
 
     textarea::-webkit-input-placeholder {
@@ -46,12 +64,12 @@
 
     .btn-submit {
         padding: 10px 20px;
-        margin-top: 30px;
+        margin-top: 5px;
         color: white;
         background-color: #7d0000;
         font-size: 20px;
         position: relative;
-        bottom: 0;
+        bottom: -10px;
         -webkit-transition: bottom 0.3s ease-out;
         transition: bottom 0.15s ease-out;
 
