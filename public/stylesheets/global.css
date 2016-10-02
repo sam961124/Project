@@ -8,6 +8,10 @@ body {
   background-color: #f8b396;
   margin: 0;
   width: 100%; }
+  body ul {
+    list-style: none; }
+  body li {
+    list-style: none; }
 
 .container {
   display: block;
@@ -28,8 +32,8 @@ body {
   padding: 15px 100px; }
   .footer .footer-container {
     text-align: center;
-    height: 55px;
-    line-height: 55px; }
+    height: 60px;
+    line-height: 30px; }
   @media screen and (max-width: 767px) {
     .footer {
       bottom: -100px;

@@ -54,6 +54,18 @@
     @media screen and (max-width: 767px) {
       .output-container .output-outcome {
         padding: 0px 20px; } }
+    .output-container .output-outcome .output-detail-receive {
+      display: none;
+      overflow: scroll;
+      height: 80px;
+      margin-left: 20px;
+      width: 80%; }
+    .output-container .output-outcome .output-detail-question {
+      line-height: 25px;
+      color: #0e324e; }
+    .output-container .output-outcome .output-detail-answer {
+      line-height: 25px;
+      margin-top: 20px; }
   .output-container .page-container {
     text-align: center;
     color: #ed5c15;
@@ -77,7 +89,7 @@
   @media screen and (max-width: 767px) {
     .output-container {
       min-height: 400px;
-      margin-top: 10px;
+      margin-top: 30px;
       padding: 20px 0; } }
   @media screen and (max-width: 370px) {
     .output-container {
@@ -117,7 +129,7 @@
   @media screen and (max-width: 767px) {
     .loader-box {
       min-height: 400px;
-      margin-top: 10px;
+      margin-top: 30px;
       padding: 20px 0; } }
   @media screen and (max-width: 370px) {
     .loader-box {

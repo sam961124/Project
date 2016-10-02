@@ -1,0 +1,47 @@
+<div class="col-md-6 col-md-offset-3  col-xs-10 col-xs-offset-1 history-container">
+    <div class="history-header">
+        歷史紀錄
+    </div>
+    <section class="cd-horizontal-timeline">
+	<div class="timeline">
+		<div class="events-wrapper">
+			<div class="events">
+				<ol>
+    				<li>
+                        <a href="#0" data-date="{{hisrecords[0].date}}" class="selected">{{hisrecords[0].date_n}}</a>
+                    </li>
+                    <li ng-repeat="hisrecord in hisrecords | filter: {init: false} | unique: 'date'">
+                        <a href="#0" data-date="{{hisrecord.date}}">{{hisrecord.date_n}}</a>
+                    </li>
+				</ol>
+
+				<span class="filling-line" aria-hidden="true"></span>
+			</div> <!-- .events -->
+		</div> <!-- .events-wrapper -->
+
+		<ul class="cd-timeline-navigation">
+			<li><a href="#0" class="prev inactive">Prev</a></li>
+			<li><a href="#0" class="next">Next</a></li>
+		</ul> <!-- .cd-timeline-navigation -->
+	</div> <!-- .timeline -->
+
+	<div class="events-content">
+		<ol>
+			<li class="selected" data-date="{{hisrecords[0].date}}">
+                <div class="history-detail-box">
+                    <div class="history-detail">
+                        <div class="col-xs-4 history-detail-time" ng-bind="hisrecords[0].time"></div>
+        				<div class="col-xs-8 history-detail-title" ng-bind="hisrecords[0].title"></div>
+                    </div>
+                </div>
+			</li>
+            <li ng-repeat="hisrecord in hisrecords | filter:{init: false}" data-date="{{hisrecord.date}}">
+                <div class="history-detail-box">
+                    <div class="col-xs-4 history-detail-time">{{hisrecord.time}}</div>
+        			<div class="col-xs-8 history-detail-title">{{hisrecord.title}}</div>
+                </div>
+			</li>
+		</ol>
+	</div> <!-- .events-content -->
+</section>
+</div>

@@ -1,0 +1,33 @@
+.history-container {
+    display: none;
+    min-height: 500px;
+    background-color: #ffea95;
+    border-radius: 20px;
+    margin-top: 50px;
+    padding: 30px 50px;
+    overflow: hidden;
+    text-align: center;
+    .history-header {
+        font-size: 25px;
+        line-height: 40px;
+        color: #ed5c15;
+    }
+    .history-detail-box {
+        overflow: scroll;
+        max-height: 180px;
+        .history-detail-title {
+            text-align: left;
+            font-size: 16px;
+            color: #ed5c15;
+        }
+        .history-detail-time {
+            font-size: 16px;
+            color: #ed5c15;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        min-height: 400px;
+        margin-top: 30px;
+        padding: 20px 0;
+    }
+}

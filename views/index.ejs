@@ -15,29 +15,30 @@
     <link rel='stylesheet' href='/stylesheets/input.css' />
     <link rel='stylesheet' href='/stylesheets/init.css' />
     <link rel='stylesheet' href='/stylesheets/output.css' />
-    <link rel='stylesheet' href='/stylesheets/result.css' />
+    <link rel='stylesheet' href='/stylesheets/map.css' />
+    <link rel='stylesheet' href='/stylesheets/history.css' />
+    <link rel='stylesheet' href='/stylesheets/timeline.css' />
     <link rel='stylesheet' href='/stylesheets/animate.css' />
     <link rel='stylesheet' href='/components/jquery-highlighttextarea/jquery.highlighttextarea.min.css' />
     <link rel='stylesheet' href='/components/angular-material/angular-material.css' />
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
-    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-    <script src="/components/wowjs/dist/wow.min.js"></script>
     <script src="/components/angular/angular.min.js"></script>
+    <script src="/components/angular-cookies/angular-cookies.min.js"></script>
     <script src="/components/angular-animate/angular-animate.min.js"></script>
     <script src="/components/angular-aria/angular-aria.min.js"></script>
     <script src="/components/angular-material/angular-material.min.js"></script>
     <script src="/components/angular-messages/angular-messages.min.js"></script>
     <script src="/components/angular-route/angular-route.min.js"></script>
     <script src="/components/Swiper/dist/js/swiper.min.js"></script>
+    <script src="/components/jquery/dist/jquery.min.js"></script>
+    <script src="javascripts/timeline/modernizr.js"></script>
     <script src="/javascripts/event.js"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+    <script src="javascripts/animation.js"></script>
+    <script src="/components/jquery-highlighttextarea/jquery.highlighttextarea.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.0/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.8/angular-filter.min.js"></script>
+    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+
   </head>
   <body>
     <%- include header %>
@@ -45,51 +46,17 @@
         <%- include init-container %>
         <%- include input-container %>
         <%- include output-container %>
-        <%- include result-container %>
+        <%- include history-container %>
+        <%- include map-container %>
         <script>
         var swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
             paginationClickable: true
         });
         </script>
+        <script src="javascripts/timeline/jquery.mobile.custom.min.js"></script>
+        <script src="javascripts/timeline/main.js"></script>
     </div>
     <%- include footer %>
-    <script>
-    $(function(){
-        $(".btn-start").click(function(){
-            $(".init-container").css("display", "none");
-            $(".swiper-container").css("display", "none");
-            $(".input-container").css("display", "block");
-        })
-        $(".btn-submit").click(function(){
-            if ($(window).width() <= 767) {
-                $(".input-container").css("display", "none");
-             }
-            $(".output-container").css("display", "none");
-            $(".loader-box").css("display", "block");
-        })
-        if ($(window).width() > 767)
-        {
-            $(".init-box-1").addClass("animated fadeInUp");
-            $(".init-box-1").css("display", "block");
-            setTimeout(function(){
-                $(".init-box-2").addClass("animated fadeInUp");
-                $(".init-box-2").css("display", "block");
-            }, 400);
-            setTimeout(function(){
-                $(".init-box-3").addClass("animated fadeInUp");
-                $(".init-box-3").css("display", "block");
-            }, 800);
-            setTimeout(function(){
-                $(".btn-start").addClass("animated fadeInUp");
-                $(".btn-start").css("display", "inline-block");
-            }, 1200);
-        }
-        //test
-        //$(".btn-warning").click(function(){
-
-            //})
-        });
-    </script>
   </body>
 </html>
