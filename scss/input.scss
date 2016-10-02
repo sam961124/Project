@@ -39,6 +39,9 @@
             padding: 12px;
             font-size: 16px;
             color: #FF7800;
+            &:focus {
+                outline: 0;
+            }
         }
     }
 

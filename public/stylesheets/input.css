@@ -30,6 +30,8 @@
       padding: 12px;
       font-size: 16px;
       color: #FF7800; }
+      .input-container .hot-topic .btn:focus {
+        outline: 0; }
   .input-container textarea::-webkit-input-placeholder {
     color: #7d0000; }
   .input-container textarea {
@@ -77,3 +79,5 @@
     margin: -1px -4px;
     border-radius: 0.5em;
     border: 1px solid pink; }
+
+/*# sourceMappingURL=input.css.map */
