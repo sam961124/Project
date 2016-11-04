@@ -14,7 +14,6 @@ var https = require('https');
 var privateKey = fs.readFileSync('../sslforfree/private.key', 'utf-8');
 var certificate = fs.readFileSync('../sslforfree/certificate.pem', 'utf-8');
 var ssl = {key: privateKey, cert: certificate};
-console.log(certificate);
 var port = normalizePort(process.env.PORT || '80');
 var https_port = normalizePort('443');
 app.set('port', port);
