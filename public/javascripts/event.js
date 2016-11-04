@@ -123,6 +123,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
                             }
                         }
                         // add bd to bodyparts
+                        var bdn_count = 0;
                         for (i = 0; i < bd.length; i++) {
                             $scope.bodyparts[i] = {};
                             $scope.bodyOutput[i] = {};
@@ -201,7 +202,11 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
 
     //history
     $scope.hisrecords = [{title: "鼻子上長一粒一粒的紅疹，會有點癢但是不會痛", time: "22:10", date: "1/7/2016", date_n: "Jul 1", init: true},
+    {title: "腳紅腫脫皮，不知道是不是鞋子的關係，有時候又很癢，是香港腳嗎？", time: "21:10", date: "20/8/2016", date_n: "Aug 20", init: false},
     {title: "腳上大拇指頂端紅腫脫皮，不知道是不是鞋子的關係，有時候又很癢，是香港腳嗎？", time: "21:12", date: "20/8/2016", date_n: "Aug 20", init: false},
+    {title: "鼻子上長一粒一粒紅紅的痘痘，有點癢", time: "22:12", date: "20/8/2016", date_n: "Aug 1", init: false},
+    {title: "臉上有一個紅腫，摸到會痛，已經持續了一個多禮拜了，擦青春痘的藥也不會好，是蕁麻疹嗎", time: "23:05", date: "20/8/2016", date_n: "Aug 20", init: false},
+    {title: "屁股長了一顆一顆的疹子，紅紅的很小一顆，但是很癢，會一直想要去抓", time: "23:13", date: "20/8/2016", date_n: "Aug 20", init: false},
     {title: "臉常常乾燥脫皮，但鼻子卻又很油", time: "19:16", date: "8/9/2016", date_n: "Sep 8", init: false},
     {title: "運動完後發現大腿後面有一處紅腫，會很癢但是不會痛，是蕁麻疹嗎？", time: "09:33", date: "25/9/2016", date_n: "Sep 25", init: false},
     {title: "前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢前幾天發燒之後，全身起紅疹，不會癢", time: "22:10", date: "5/10/2016", date_n: "Oct 5", init: false},

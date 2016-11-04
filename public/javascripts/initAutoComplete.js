@@ -1,5 +1,6 @@
 var map;
 var geocoder;
+var myCenter = new Object();
 
 function initMap() {
     //map options
@@ -12,16 +13,31 @@ function initMap() {
         mapTypeControl: false
     }
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var mapSet = false;
     //check whether browser supports GPS locating
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-            addMarker(location);
-        });
-    } else {
-        location = new google.maps.LatLng(25.09108, 121.5598);
-        addMarker(location);
+    var setDefaultPos = function() {
+        mapSet = true;
+        myCenter.lat = 25.021719;
+        myCenter.lng = 121.534958;
+        var myLatlng = new google.maps.LatLng(myCenter.lat, myCenter.lng);
+        addMarker(myLatlng);
     }
+    /*if (navigator.geolocation) {
+        try {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                addMarker(location);
+            })
+        } catch (e) {
+            setDefaultPos();
+        }
+    } else {
+        setDefaultPos();
+    };*/
+
+    if (!mapSet)
+        setDefaultPos();
+
     showHospital();
 }
 //add User location marker
