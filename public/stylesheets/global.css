@@ -39,3 +39,16 @@ body {
       bottom: -100px;
       font-size: 12px;
       padding: 10px 20px; } }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent; }
+
+::-webkit-scrollbar-corner {
+  background: transparent; }
+
+/*# sourceMappingURL=global.css.map */
