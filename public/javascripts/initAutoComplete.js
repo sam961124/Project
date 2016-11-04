@@ -22,7 +22,7 @@ function initMap() {
         var myLatlng = new google.maps.LatLng(myCenter.lat, myCenter.lng);
         addMarker(myLatlng);
     }
-    if (navigator.geolocation) {
+    /*if (navigator.geolocation) {
         try {
             navigator.geolocation.getCurrentPosition(function(position) {
                 location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -33,7 +33,7 @@ function initMap() {
         }
     } else {
         setDefaultPos();
-    };
+    };*/
 
     if (!mapSet)
         setDefaultPos();
