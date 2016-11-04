@@ -3,24 +3,28 @@
 /**
  * Module dependencies.
  */
-
+var fs = require('fs');
 var app = require('../app');
 var debug = require('debug')('project:server');
 var http = require('http');
-
+var https = require('https');
 /**
  * Get port from environment and store in Express.
  */
-
-var port = normalizePort(process.env.PORT || '3000');
+var privateKey = fs.readFileSync('../sslforfree/private.key', 'utf-8');
+var certificate = fs.readFileSync('../sslforfree/certificate.pem', 'utf-8');
+var ssl = {key: privateKey, cert: certificate};
+console.log(certificate);
+var port = normalizePort(process.env.PORT || '80');
+var https_port = normalizePort('443');
 app.set('port', port);
-
+app.set('https_port', https_port);
 /**
  * Create HTTP server.
  */
 
 var server = http.createServer(app);
-
+var https_server = https.createServer(ssl, app);
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -28,6 +32,8 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
+https_server.listen(https_port);
 
 /**
  * Normalize a port into a number, string, or false.

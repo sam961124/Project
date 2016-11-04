@@ -90,7 +90,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
         console.log($scope.detail);
         $http({
                 method: 'POST',
-                url: 'http://four.ddns.net:3000',
+                url: 'https://lkh9543.in:3000',
                 data: {
                     '_id': $cookies.get('_id'),
                     'data': $scope.detail
@@ -178,7 +178,7 @@ project.controller("HttpPostController", function($scope, $http, $cookies) {
           $(".output-detail-receive").css("display", "none");
           $http({
              method: 'GET',
-             url: 'http://four.ddns.net:3000/doc/'+id,
+             url: 'https://lkh9543.in:3000/doc/'+id,
              headers: {'Content-Type': 'application/json'}
           })
           .then(function(data) {
