@@ -22,7 +22,10 @@ app.set('https_port', https_port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = http.createServer(function (req, res) {
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();}
+);
 var https_server = https.createServer(ssl, app);
 /**
  * Listen on provided port, on all network interfaces.
